@@ -126,8 +126,6 @@
 }
 
 .booking-form .submit-btn{
-	color: #fff;
-	background-color: #f14634;
 	font-weight: 700;
 	height: 45px;
 	font-size: 18px;
@@ -142,6 +140,12 @@
         color:white;
 }
 
+.submit-btn:hover{
+        background: #1488CC;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #F96f58, #F9a758);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #F96f58, #F9a758); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+        color:white;
+}
 
 .booking-form .titulo{
         font-weight: 700;
@@ -157,7 +161,7 @@
 }
 
 a{
-        decoration: none;
+        text-decoration: none;
         color: white;
 }
 

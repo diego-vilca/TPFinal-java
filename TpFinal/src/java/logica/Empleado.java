@@ -2,6 +2,7 @@
 package logica;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -39,9 +40,11 @@ public class Empleado implements Serializable {
 
     //constructores
     public Empleado() {
+        this.listaVentas = new ArrayList<>();
     }
 
     public Empleado(int id, String nombre, String apellido, String direccion, String dni, String nacionalidad, String celular, String email, String cargo, double sueldo, Date fechaNac, Usuario user) {
+        this();
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

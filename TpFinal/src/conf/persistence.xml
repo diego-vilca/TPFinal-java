@@ -7,6 +7,7 @@
     <class>logica.Empleado</class>
     <class>logica.ServicioTuristico</class>
     <class>logica.PaqueteTuristico</class>
+    <class>logica.Cliente</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tpfinal?serverTimezone=UTC"/>

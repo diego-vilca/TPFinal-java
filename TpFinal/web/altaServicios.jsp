@@ -68,13 +68,18 @@
 										<span class="form-label">Destino</span>
                                                                                 <select class="form-control" name="cboDestino"">
                                                                                         <option></option>
-											<option></option>
-											<option></option>
-                                                                                        <option></option>
-											<option></option>
-                                                                                        <option></option>
-                                                                                        <option></option>
-											<option></option>
+											<option>Iguazú</option>
+											<option>Bariloche</option>
+                                                                                        <option>Carlos Paz</option>
+											<option>Mar del Plata</option>
+                                                                                        <option>Ushuaia</option>
+                                                                                        <option>La Quiaca</option>
+											<option>Pinamar</option>
+                                                                                        <option>Puerto Madryn</option>
+											<option>Tafi del Valle</option>
+                                                                                        <option>Península Valdez</option>
+                                                                                        <option>San Martín de los Andes</option>
+											<option>San Rafael</option>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
@@ -85,7 +90,13 @@
 										<input class="form-control" type="date"  name="txtFecha" placeholder="Ingrese una fecha" required>
 									</div>
 								</div>
-							</div>
+                                                          </div>
+                                                                <div class="row no-margin">
+                                                                        <div class="form-group">
+                                                                            <span class="form-label">Costo</span>
+                                                                            <input class="form-control" type="text" name="txtCosto" placeholder="Ingrese un costo">
+                                                                        </div>
+                                                                </div>
                                                         
 							<div class="form-btn">
 								<button type="submit" class="submit-btn">Enviar</button>
