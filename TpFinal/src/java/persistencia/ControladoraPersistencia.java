@@ -1,6 +1,7 @@
 
 package persistencia;
 
+import java.util.List;
 import logica.Cliente;
 import logica.Empleado;
 import logica.ServicioTuristico;
@@ -21,7 +22,11 @@ public class ControladoraPersistencia {
         empleadoJpa.create(empleado);
     }
     
-    
+    //Lectura
+
+    public List<Empleado> traerEmpleados() {
+        return empleadoJpa.findEmpleadoEntities();
+    } 
     
     
     //==========================================================================
@@ -33,6 +38,11 @@ public class ControladoraPersistencia {
     }
     
     
+    //Lectura
+    public List<ServicioTuristico> traerServicios() {
+        return servicioJpa.findServicioTuristicoEntities();
+    }
+    
     //==========================================================================
     //métodos para los clientes
     //Alta
@@ -40,6 +50,15 @@ public class ControladoraPersistencia {
     public void crearCliente(Cliente cliente) {
         clienteJpa.create(cliente);
     }
+    
+    //Lectura
+    public List<Cliente> traerClientes() {
+        return clienteJpa.findClienteEntities();
+    }
+
+    
+
+    
     
     
     

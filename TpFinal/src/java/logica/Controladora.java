@@ -2,6 +2,7 @@
 package logica;
 
 import java.sql.Date;
+import java.util.List;
 import persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -39,6 +40,12 @@ public class Controladora {
         controlPersis.crearEmpleado(empleado, user);
     }
     
+    //traer Empleados
+    
+    public List<Empleado> traerEmpleados(){
+        return controlPersis.traerEmpleados();
+    }
+    
     //==========================================================================
     //metodos para Servicio
     // Alta
@@ -54,6 +61,14 @@ public class Controladora {
         
         controlPersis.crearServicio(servicio);
     }
+    
+    //traer servicios
+    
+    public List<ServicioTuristico> traerServicios(){
+        return controlPersis.traerServicios();
+    }
+    
+    
     
     //==========================================================================
     //metodos para Cliente
@@ -73,5 +88,12 @@ public class Controladora {
         
         controlPersis.crearCliente(cliente);
     }
+    
+    //traer clientes
+    
+    public List<Cliente> traerClientes(){
+        return controlPersis.traerClientes();
+    }
+    
     
 }

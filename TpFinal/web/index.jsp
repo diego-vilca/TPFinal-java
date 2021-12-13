@@ -77,7 +77,7 @@
 							<li>
 								<a href="vacation.html" class="fh5co-sub-ddown">Servicios</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Nuestros Servicios</a></li>
+									<li><a href="traerServicios.jsp">Nuestros Servicios</a></li>
 									<li><a href="altaServicios.jsp">Alta de Servicios</a></li>
 									<li><a href="#">Baja de Servicios</a></li>
 									<li><a href="#">Modificar Servicio</a></li>
@@ -86,7 +86,7 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Empleados</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Nuestros Empleados</a></li>
+									<li><a href="traerEmpleados.jsp">Nuestros Empleados</a></li>
 									<li><a href="altaEmpleados.jsp">Alta de Empleado</a></li>
 									<li><a href="#">Baja de Empleado</a></li>
 									<li><a href="#">Modificar Empleado</a></li>
@@ -95,7 +95,7 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Clientes</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Nuestros Clientes</a></li>
+									<li><a href="traerClientes.jsp">Nuestros Clientes</a></li>
 									<li><a href="altaClientes.jsp">Alta de Cliente</a></li>
 									<li><a href="#">Baja de Cliente</a></li>
 									<li><a href="#">Modificar Cliente</a></li>
