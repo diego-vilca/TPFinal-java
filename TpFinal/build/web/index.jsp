@@ -87,9 +87,15 @@
                                                                     <form action="SvEmpleado" method="GET">
                                                                         <li><a href="SvEmpleado" type="submit">Nuestros Empleados</a></li>
                                                                     </form>
+                                                                    
 									<li><a href="altaEmpleados.jsp">Alta de Empleado</a></li>
-									<li><a href="#">Baja de Empleado</a></li>
-									<li><a href="#">Modificar Empleado</a></li>
+                                                                        
+                                                                    <form action="SvEmpleadoEliminar" method="GET">   
+									<li><a href="SvEmpleadoEliminar">Baja de Empleado</a></li>
+                                                                    </form>
+                                                                    <form action="SvHaciaEmpleadoModificar" method="GET">    
+									<li><a href="SvHaciaEmpleadoModificar">Modificar Empleado</a></li>
+                                                                    </form>
 								</ul>
 							</li>
 							<li>

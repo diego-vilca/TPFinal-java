@@ -35,8 +35,8 @@ si tenemos jsp en la parte de arriba-->
                                         <table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-                                                    <th>Paquetes</th>
                                                     <th>Código de paquete</th>
+                                                    <th>Paquete</th>
                                                     <th>Costo del paquete</th>
 					      </tr>
 					    </thead>
@@ -50,7 +50,10 @@ si tenemos jsp en la parte de arriba-->
                                                 
 					        <% List<ServicioTuristico> listaServ = paquete.getListaServicios(); %>
                                                 
-                                                <th>
+                                                <% int id = paquete.getCodigoPaquete(); %>
+					        <th scope="row" class="scope" ><%=id %></th>
+                                                
+                                                <td>
                                                     <select class="form-control" name="cboNombre"">
                                                         <% for (ServicioTuristico servicio : listaServ) {%>
                                                             
@@ -60,9 +63,8 @@ si tenemos jsp en la parte de arriba-->
                                                         <% } %>
                                                             
                                                     </select>
-                                                </th>
-                                                <% int id = paquete.getCodigoPaquete(); %>
-					        <td scope="row" class="scope" ><%=id %></td>
+                                                </td>
+                                                
                                                 <% double costo = paquete.getCosto(); %>
 					        <td>$<%=costo%></td>
                                                 

@@ -54,12 +54,29 @@ public class Controladora {
         controlPersis.crearEmpleado(empleado, user);
     }
     
-    //traer Empleados
     
+    //traer Empleados    
     public List<Empleado> traerEmpleados(){
         return controlPersis.traerEmpleados();
     }
     
+    
+    //Borrar empleado
+    public void borrarEmpleado(int id) {
+        controlPersis.borrarEmpleado(id);
+    }
+    
+    
+    //Buscar empleado
+    public Empleado buscarEmpleado(int id) {
+        return controlPersis.buscarEmpleado(id);
+    }
+    
+    //Modificar empleado
+    public void ModificarEmpleado(Empleado emple) {
+        controlPersis.ModificarEmpleado(emple);
+    }
+
     
     //==========================================================================
     //metodos para Servicio
@@ -200,6 +217,13 @@ public class Controladora {
     public List<PaqueteTuristico> traerPaquetes() {
         return controlPersis.traerPaquetes();
     }
+
+    
+
+    
+    
+
+
 
     
 }

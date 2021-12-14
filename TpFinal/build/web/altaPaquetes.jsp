@@ -71,8 +71,10 @@ si tenemos jsp en la parte de arriba-->
                                               <% } %>
 					    </tbody>
 					  </table>
-                                           <div class="form-btn">
-						<button type="submit" class="btn btn btn-primary">Seleccionar Paquete</button>
+                                            <div class="row justify-content-center">
+                                                <div class="form-btn">
+                                                    <button type="submit" class="btn btn-primary btn-lg">Seleccionar Paquete</button>
+                                                </div>
                                             </div>
                                           </form>  
 					</div>  

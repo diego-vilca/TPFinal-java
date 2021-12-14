@@ -2,11 +2,14 @@
 package persistencia;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import logica.Cliente;
 import logica.Empleado;
 import logica.PaqueteTuristico;
 import logica.ServicioTuristico;
 import logica.Usuario;
+import persistencia.exceptions.NonexistentEntityException;
 
 public class ControladoraPersistencia {
 
@@ -25,11 +28,32 @@ public class ControladoraPersistencia {
     }
     
     //Lectura
-
     public List<Empleado> traerEmpleados() {
         return empleadoJpa.findEmpleadoEntities();
     } 
     
+    //Eliminar
+    public void borrarEmpleado(int id) {
+        try {
+            empleadoJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    //Buscar empleado
+    public Empleado buscarEmpleado(int id) {
+        return empleadoJpa.findEmpleado(id);
+    }
+
+    //Modificar empleado
+    public void ModificarEmpleado(Empleado emple) {
+        try {
+            empleadoJpa.edit(emple);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
     
     //==========================================================================
     //métodos para los servicios
@@ -78,6 +102,10 @@ public class ControladoraPersistencia {
 
     
 
+    
+    
+
+    
     
     
     

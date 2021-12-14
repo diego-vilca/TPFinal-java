@@ -36,6 +36,8 @@ public class SvEmpleado extends HttpServlet {
         HttpSession misession = request.getSession();
         misession.setAttribute("listaEmpleados", listaEmple);
         response.sendRedirect("traerEmpleados.jsp");
+        
+                
     }
 
     
@@ -73,7 +75,7 @@ public class SvEmpleado extends HttpServlet {
                     
         //Redirecciono al index
         response.sendRedirect("index.jsp");
-            
+        
         
     }
 
