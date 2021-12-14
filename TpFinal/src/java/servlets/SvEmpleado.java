@@ -52,7 +52,7 @@ public class SvEmpleado extends HttpServlet {
         //dni
         String dni = request.getParameter("txtDni");
         //fecha de nacimiento
-        String fecha = request.getParameter("txtFecha");
+        String fecha = request.getParameter("txtFechaNac");
         //nacionalidad
         String nacionalidad = request.getParameter("cboNac");
         //celular

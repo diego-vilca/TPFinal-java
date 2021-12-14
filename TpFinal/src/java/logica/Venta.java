@@ -64,6 +64,7 @@ public class Venta implements Serializable {
     
     
     //getters y setters
+   
 
     public int getNumVenta() {
         return numVenta;
@@ -120,8 +121,6 @@ public class Venta implements Serializable {
     public void setPaquete(PaqueteTuristico paquete) {
         this.paquete = paquete;
     }
-
+    
     //Métodos
-    
-    
 }

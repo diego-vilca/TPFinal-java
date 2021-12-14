@@ -27,13 +27,14 @@ public class Controladora {
         empleado.setDni(dni);
         
         //Convierto el string fecha a Date
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha= new Date();
         
         try {
             fecha = formato.parse(fechaNac);
         } catch (Exception e) {
-            System.out.println("Error, la fecha no pudo parsearse.");
+            //imprimo la excepción
+            e.printStackTrace();
         }
         empleado.setFechaNac(fecha);
         empleado.setNacionalidad(nacionalidad);
@@ -74,14 +75,18 @@ public class Controladora {
         servicio.setCosto(costo);
         
         //Convierto el string fecha a Date
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fechaF= new Date();
         
         try {
             fechaF = formato.parse(fecha);
         } catch (Exception e) {
-            System.out.println("Error, la fecha no pudo parsearse.");
+            //imprimo la excepción
+            e.printStackTrace();
         }
+
+        
+        //asigno la fecha al servicio
         servicio.setFecha(fechaF);
         
         controlPersis.crearServicio(servicio);
@@ -109,13 +114,14 @@ public class Controladora {
         cliente.setDni(dni);
         
         //Convierto el string fecha a Date
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha= new Date();
         
         try {
             fecha = formato.parse(fechaNac);
         } catch (Exception e) {
-            System.out.println("Error, la fecha no pudo parsearse.");
+            //imprimo la excepción
+            e.printStackTrace();
         }
         cliente.setFechaNac(fecha);
         cliente.setNacionalidad(nacionalidad);
