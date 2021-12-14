@@ -15,10 +15,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="css-form/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="assets/form/bootstrap.min.css" />
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css-form/style.css" />
+	<link type="text/css" rel="stylesheet" href="assets/form/style.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

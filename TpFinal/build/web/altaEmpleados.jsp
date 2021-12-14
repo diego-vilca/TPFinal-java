@@ -1,7 +1,7 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- %@page contentType="text/html" pageEncoding="UTF-8" -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -15,10 +15,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="css-form/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="assets/form/bootstrap.min.css" />
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css-form/style.css" />
+	<link type="text/css" rel="stylesheet" href="assets/form/style.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,8 +54,8 @@
 							<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">DirecciÃ³n</span>
-										<input class="form-control" type="text" name="txtDireccion" placeholder="Ingrese una direcciÃ³n" required>
+										<span class="form-label">Dirección</span>
+										<input class="form-control" type="text" name="txtDireccion" placeholder="Ingrese una dirección" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -96,7 +96,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" placeholder="Ingrese un telÃ©fono" required>
+										<input class="form-control" type="text" name="txtCelular" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -129,8 +129,8 @@
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">ContraseÃ±a</span>
-										<input class="form-control" type="password" name="txtContrasenia" placeholder="Ingrese una contraseÃ±a" required>
+										<span class="form-label">Contraseña</span>
+										<input class="form-control" type="password" name="txtContrasenia" placeholder="Ingrese una contraseña" required>
 									</div>
 								</div>
 							</div>

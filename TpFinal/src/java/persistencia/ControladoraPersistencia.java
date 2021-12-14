@@ -4,6 +4,7 @@ package persistencia;
 import java.util.List;
 import logica.Cliente;
 import logica.Empleado;
+import logica.PaqueteTuristico;
 import logica.ServicioTuristico;
 import logica.Usuario;
 
@@ -13,6 +14,7 @@ public class ControladoraPersistencia {
     UsuarioJpaController userJpa = new UsuarioJpaController();
     ServicioTuristicoJpaController servicioJpa = new ServicioTuristicoJpaController();
     ClienteJpaController clienteJpa = new ClienteJpaController();
+    PaqueteTuristicoJpaController paqueteJpa = new PaqueteTuristicoJpaController();
     
     //==========================================================================
     //métodos para los empleados
@@ -54,6 +56,24 @@ public class ControladoraPersistencia {
     //Lectura
     public List<Cliente> traerClientes() {
         return clienteJpa.findClienteEntities();
+    }
+    
+    
+    //==========================================================================
+    //métodos para los Usuario
+    public List<Usuario> traerUsuario() {
+        return userJpa.findUsuarioEntities();
+    }
+    
+    //==========================================================================
+    //Métodos para los paquetes
+    
+    public void crearPaquete(PaqueteTuristico paquete) {
+        paqueteJpa.create(paquete);
+    }
+
+    public List<PaqueteTuristico> traerPaquetes() {
+        return paqueteJpa.findPaqueteTuristicoEntities();
     }
 
     

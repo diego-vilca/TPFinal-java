@@ -3,13 +3,15 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.Controladora;
+import logica.ServicioTuristico;
 
 
 @WebServlet(name = "SvServicio", urlPatterns = {"/SvServicio"})
@@ -27,6 +29,12 @@ public class SvServicio extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        List<ServicioTuristico> listaServicios = control.traerServicios();
+        
+        HttpSession misession = request.getSession();
+        misession.setAttribute("listaServicios", listaServicios);
+        response.sendRedirect("traerServicios.jsp");
     }
 
     
@@ -37,9 +45,9 @@ public class SvServicio extends HttpServlet {
         
         String nombre = request.getParameter("cboNombre");
         String descripcion = request.getParameter("txtDescripcion");
-        String destino = request.getParameter("txtDestino");
+        String destino = request.getParameter("cboDestino");
         double costo = Double.parseDouble(request.getParameter("txtCosto"));
-        Date fecha = Date.valueOf(request.getParameter("txtFecha"));
+        String fecha = request.getParameter("txtFecha");
         
         control.crearServicio(nombre, descripcion, destino, costo, fecha);
         

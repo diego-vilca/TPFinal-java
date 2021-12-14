@@ -12,12 +12,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>TP Final - Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
 
   
-
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -35,26 +31,26 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="assets/index/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="assets/index/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="assets/index/css/bootstrap.css">
 	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
+	<link rel="stylesheet" href="assets/index/css/superfish.css">
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/index/css/magnific-popup.css">
 	<!-- Date Picker -->
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="assets/index/css/bootstrap-datepicker.min.css">
 	<!-- CS Select -->
-	<link rel="stylesheet" href="css/cs-select.css">
-	<link rel="stylesheet" href="css/cs-skin-border.css">
+	<link rel="stylesheet" href="assets/index/css/cs-select.css">
+	<link rel="stylesheet" href="assets/index/css/cs-skin-border.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="assets/index/css/style.css">
 
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="assets/index/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -69,15 +65,17 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Viaje Ya!</a></h1>
+					<h1 id="fh5co-logo"><a href="index.jsp"><i class="icon-airplane"></i>Viaje Ya!</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li class="active"><a href="index.html">Principal</a></li>
 							<li>
-								<a href="vacation.html" class="fh5co-sub-ddown">Servicios</a>
+                                                                <a href="#" class="fh5co-sub-ddown">Servicios</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="traerServicios.jsp">Nuestros Servicios</a></li>
+                                                                    <form action="SvServicio" method="GET">
+									<li><a href="SvServicio">Nuestros Servicios</a></li>
+                                                                    </form>
 									<li><a href="altaServicios.jsp">Alta de Servicios</a></li>
 									<li><a href="#">Baja de Servicios</a></li>
 									<li><a href="#">Modificar Servicio</a></li>
@@ -86,7 +84,9 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Empleados</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="traerEmpleados.jsp">Nuestros Empleados</a></li>
+                                                                    <form action="SvEmpleado" method="GET">
+                                                                        <li><a href="SvEmpleado" class="submit">Nuestros Empleados</a></li>
+                                                                    </form>
 									<li><a href="altaEmpleados.jsp">Alta de Empleado</a></li>
 									<li><a href="#">Baja de Empleado</a></li>
 									<li><a href="#">Modificar Empleado</a></li>
@@ -95,7 +95,9 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Clientes</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="traerClientes.jsp">Nuestros Clientes</a></li>
+                                                                    <form action="SvCliente" method="GET">
+									<li><a href="SvCliente" type="submit">Nuestros Clientes</a></li>
+                                                                    </form>
 									<li><a href="altaClientes.jsp">Alta de Cliente</a></li>
 									<li><a href="#">Baja de Cliente</a></li>
 									<li><a href="#">Modificar Cliente</a></li>
@@ -104,8 +106,12 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Paquetes</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Nuestros Paquetes</a></li>
-									<li><a href="#">Alta de Paquetes</a></li>
+                                                                    <form action="SvPaqueteMostrar" method="GET">
+									<li><a href="SvPaqueteMostrar">Nuestros Paquetes</a></li>
+                                                                    </form>
+                                                                    <form action="SvPaquete" method="GET">
+									<li><a href="SvPaquete">Alta de Paquetes</a></li>
+                                                                    </form>
 									<li><a href="#">Baja de Paquetes</a></li>
 									<li><a href="#">Modificar Paquetes</a></li>
 								</ul>
@@ -117,7 +123,7 @@
 									<li><a href="#">Vender un paquete</a></li>
 								</ul>
 							</li>
-							<li><a href="contact.html">Login</a></li>
+							<li><a href="login.jsp">Login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -128,7 +134,7 @@
 	
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_0.jpg);">
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(assets/index/images/cover_bg_0.jpg);">
 				<div class="desc">
 					<div class="container">
 						<div class="row">
@@ -158,7 +164,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<div href="#"><img src="assets/index/images/place-1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
 								<h3>New York</h3>
@@ -169,7 +175,7 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<div href="#"><img src="assets/index/images/place-2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
 								<h3>Philippines</h3>
@@ -180,7 +186,7 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="images/place-3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<div href="#"><img src="assets/index/images/place-3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
 								<h3>Hongkong</h3>
@@ -291,28 +297,28 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul id="fh5co-destination-list" class="animate-box">
-							<li class="one-forth text-center" style="background-image: url(images/place-1.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-1.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Los Angeles</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-2.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-2.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Hongkong</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-3.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-3.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Italy</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-4.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-4.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Philippines</h2>
@@ -320,7 +326,7 @@
 								</a>
 							</li>
 
-							<li class="one-forth text-center" style="background-image: url(images/place-5.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-5.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Japan</h2>
@@ -335,35 +341,35 @@
 									</div>
 								</div>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-6.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-6.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Paris</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-7.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-7.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Singapore</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-8.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-8.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Madagascar</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-9.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-9.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Egypt</h2>
 									</div>
 								</a>
 							</li>
-							<li class="one-forth text-center" style="background-image: url(images/place-10.jpg); ">
+							<li class="one-forth text-center" style="background-image: url(assets/index/images/place-10.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
 										<h2>Indonesia</h2>
@@ -389,7 +395,7 @@
 				<div class="row row-bottom-padded-md">
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-1.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="assets/index/images/place-1.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">30% Discount to Travel All Around the World</a></h3>
@@ -403,7 +409,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-2.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="assets/index/images/place-2.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Planning for Vacation</a></h3>
@@ -418,7 +424,7 @@
 					<div class="clearfix visible-sm-block"></div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-3.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="assets/index/images/place-3.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Visit Tokyo Japan</a></h3>
@@ -440,7 +446,7 @@
 			</div>
 		</div>
 		<!-- fh5co-blog-section -->
-		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
+		<div id="fh5co-testimonial" style="background-image:url(assets/index/images/img_bg_1.jpg);">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -563,31 +569,31 @@
 	<!-- jQuery -->
 
 
-	<script src="js/jquery.min.js"></script>
+	<script src="assets/index/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="assets/index/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="assets/index/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
+	<script src="assets/index/js/jquery.waypoints.min.js"></script>
+	<script src="assets/index/js/sticky.js"></script>
 
 	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="assets/index/js/jquery.stellar.min.js"></script>
 	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
+	<script src="assets/index/js/hoverIntent.js"></script>
+	<script src="assets/index/js/superfish.js"></script>
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="assets/index/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/index/js/magnific-popup-options.js"></script>
 	<!-- Date Picker -->
-	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="assets/index/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<script src="assets/index/js/classie.js"></script>
+	<script src="assets/index/js/selectFx.js"></script>
 	
 	<!-- Main JS -->
-	<script src="js/main.js"></script>
+	<script src="assets/index/js/main.js"></script>
 
 	</body>
 </html>

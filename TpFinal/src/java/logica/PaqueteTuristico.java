@@ -2,6 +2,7 @@
 package logica;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -27,9 +28,12 @@ public class PaqueteTuristico implements Serializable {
     //constructores
 
     public PaqueteTuristico() {
+        this.listaServicios = new ArrayList<>();
+        this.listaVentas = new ArrayList<>();
     }
 
     public PaqueteTuristico(int codigoPaquete, double costo) {
+        this();
         this.codigoPaquete = codigoPaquete;
         this.costo = costo;
     }
@@ -77,6 +81,14 @@ public class PaqueteTuristico implements Serializable {
 
     public void setListaVentas(List<Venta> listaVentas) {
         this.listaVentas = listaVentas;
+    }
+    
+    
+    //Metodos
+    
+    //Agregar servicio a la lista
+    public void agregarServicio(ServicioTuristico servicio){
+        this.listaServicios.add(servicio);
     }
     
     

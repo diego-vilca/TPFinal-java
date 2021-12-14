@@ -1,129 +1,87 @@
 
+<%@page import="logica.ServicioTuristico"%>
 <!-- Se puede sacar @page contentType="text/html" pageEncoding="UTF-8" para evitar problemas con tildes 
 si tenemos jsp en la parte de arriba-->
-<%@page import="logica.ServicioTuristico"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="logica.Controladora"%>
+<!doctype html>
+<html lang="es">
+  <head>
+  	<title>Ver Servicios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Table V05</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="tabla/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="tabla/css/util.css">
-	<link rel="stylesheet" type="text/css" href="tabla/css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="row justify-content-center">
-					<div class="col-md-6 text-center mb-5">
-						<h2 class="titulo">Listado de clientes</h2>
-					</div>
-				</div>
-				<div class="table100 ver1">					
-					<div class="wrap-table100-nextcols js-pscroll">
-						<div class="table100-nextcols">
-							<table>
-								<thead>
-									<tr class="row100 head">
-                                                                                <th class="cell100 column2">Servicio</th>
-										<th class="cell100 column2">Descripción</th>
-										<th class="cell100 column2">Destino</th>
-										<th class="cell100 column2">Costo</th>
-										<th class="cell100 column2">Fecha</th>
-								</thead>
-								<tbody>
-                                                                        <% Controladora control = new Controladora();
-                                                                        List<ServicioTuristico> listaServicios = control.traerServicios(); 
-                                                                        
-									for(ServicioTuristico serv : listaServicios) { %>
-										<tr class="row100 body">
-                                                                                        <% String servicio = serv.getNombre(); %>
-                                                                                        <td class="cell100 column2"><%=servicio %></td>
-											<% String descripcion = serv.getDescripcion(); %>
-											<td class="cell100 column2"><%=descripcion %></td>
-											<% 
-                                                                                            String destino = serv.getDestino(); 
-                                                                                        %>
-											<td class="cell100 column2"><%=destino %></td>
-                                                                                        <% double costo = serv.getCosto(); %>
-											<td class="cell100 column2"><%=costo%></td>
-											<% Date fecha = serv.getFecha(); 
-                                                                                        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-                                                                                        %>
-											<td class="cell100 column2"><%=df.format(fecha)%></td>
+	<link rel="stylesheet" href="assets/tabla/css/style.css">
 
-										</tr>
-									<% } %>
-
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-						<a href="index.jsp" class="btn-volver">Volver a la Página Principal</a>
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+                            <h4 class="text-center mb-4 titulo">Lista de servicios</h4>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					
+					<div class="table-wrap">
+                                        <table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+                                                    <th>Servicio</th>
+                                                    <th>Id</th>
+                                                    <th>Descripción</th>
+                                                    <th>Destino</th>
+                                                    <th>Costo</th>
+                                                    <th>Fecha</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <% HttpSession misession = request.getSession();
+
+                                                List<ServicioTuristico> listaServicios = (List) request.getSession().getAttribute("listaServicios");
+                                                for(ServicioTuristico servicio : listaServicios) { %>
+					      <tr>
+                                                <% String nombre = servicio.getNombre(); %>
+					        <th scope="row" class="scope" ><%=nombre %></th>
+                                                <% int codigo = servicio.getCodigo(); %>
+                                                <td scope="row" class="scope" ><%=codigo %></td>
+					        <% String descripcion = servicio.getDescripcion(); %>
+                                                <td><%=descripcion %></td>
+                                                <% String destino = servicio.getDestino(); %>
+					        <td><%=destino %></td>
+                                                <% double costo = servicio.getCosto(); %>
+					        <td><%=costo%></td>
+                                                <% Date fecha = servicio.getFecha(); 
+                                                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+                                                %>
+					        <td><%=df.format(fecha)%></td>
+					        <!--<td><a href="#" class="btn btn-primary">Sign Up</a></td>-->
+					      </tr>
+                                              <% } %>
+					    </tbody>
+					  </table>
+                                            
+					</div>  
 				</div>
 			</div>
+                    <div class="justify-content-center">
+			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
+                    </div>  
+                                            
 		</div>
-	</div>
+	</section>
+                                           
 
+	<script src="assets/tabla/js/jquery.min.js"></script>
+  <script src="assets/tabla/js/bootstrap.min.js"></script>
+  <script src="assets/tabla/js/main.js"></script>
 
-<!--===============================================================================================-->	
-	<script src="tabla/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-        <script src="tabla/vendor/bootstrap/js/popper.js"></script>
-	<script src="tabla/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="tabla/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="tabla/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			var ps = new PerfectScrollbar(this);
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-
-			$(this).on('ps-x-reach-start', function(){
-				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
-			});
-
-			$(this).on('ps-scroll-x', function(){
-				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
-			});
-
-		});
-
-		
-		
-		
-	</script>
-<!--===============================================================================================-->
-	<script src="tabla/js/main.js"></script>
-
-</body>
+	</body>
 </html>
+
