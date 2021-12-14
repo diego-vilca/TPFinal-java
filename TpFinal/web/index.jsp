@@ -74,7 +74,7 @@
                                                                 <a href="#" class="fh5co-sub-ddown">Servicios</a>
 								<ul class="fh5co-sub-menu">
                                                                     <form action="SvServicio" method="GET">
-									<li><a href="SvServicio">Nuestros Servicios</a></li>
+									<li><a href="SvServicio" type="submit">Nuestros Servicios</a></li>
                                                                     </form>
 									<li><a href="altaServicios.jsp">Alta de Servicios</a></li>
 									<li><a href="#">Baja de Servicios</a></li>
@@ -85,7 +85,7 @@
 								<a href="#" class="fh5co-sub-ddown">Empleados</a>
 								<ul class="fh5co-sub-menu">
                                                                     <form action="SvEmpleado" method="GET">
-                                                                        <li><a href="SvEmpleado" class="submit">Nuestros Empleados</a></li>
+                                                                        <li><a href="SvEmpleado" type="submit">Nuestros Empleados</a></li>
                                                                     </form>
 									<li><a href="altaEmpleados.jsp">Alta de Empleado</a></li>
 									<li><a href="#">Baja de Empleado</a></li>
@@ -107,7 +107,7 @@
 								<a href="#" class="fh5co-sub-ddown">Paquetes</a>
 								<ul class="fh5co-sub-menu">
                                                                     <form action="SvPaqueteMostrar" method="GET">
-									<li><a href="SvPaqueteMostrar">Nuestros Paquetes</a></li>
+									<li><a href="SvPaqueteMostrar" type="submit">Nuestros Paquetes</a></li>
                                                                     </form>
                                                                     <form action="SvPaquete" method="GET">
 									<li><a href="SvPaquete">Alta de Paquetes</a></li>

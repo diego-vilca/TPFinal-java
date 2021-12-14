@@ -1,7 +1,7 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- %@page contentType="text/html" pageEncoding="UTF-8"% -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -54,8 +54,8 @@
 							<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">DirecciÃ³n</span>
-										<input class="form-control" type="text" name="txtDireccion" placeholder="Ingrese una direcciÃ³n" required>
+										<span class="form-label">Dirección</span>
+										<input class="form-control" type="text" name="txtDireccion" placeholder="Ingrese una dirección" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -96,7 +96,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" placeholder="Ingrese un telÃ©fono" required>
+										<input class="form-control" type="text" name="txtCelular" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">

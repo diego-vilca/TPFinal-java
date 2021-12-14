@@ -1,5 +1,6 @@
 
 <%@page import="logica.ServicioTuristico"%>
+<!-- %@page import="logica.ServicioTuristico"% -->
 <!-- Se puede sacar @page contentType="text/html" pageEncoding="UTF-8" para evitar problemas con tildes 
 si tenemos jsp en la parte de arriba-->
 <%@page import="java.text.SimpleDateFormat"%>
@@ -60,7 +61,7 @@ si tenemos jsp en la parte de arriba-->
                                                 <% String destino = servicio.getDestino(); %>
 					        <td><%=destino %></td>
                                                 <% double costo = servicio.getCosto(); %>
-					        <td><%=costo%></td>
+					        <td>$<%=costo%></td>
                                                 <% Date fecha = servicio.getFecha(); 
                                                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                                                 %>

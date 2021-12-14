@@ -46,7 +46,7 @@ si tenemos jsp en la parte de arriba-->
 					    <tbody>
 					      <% HttpSession misession = request.getSession();
 
-                                                List<Cliente> listaClientes = (List) request.getSession().getAttribute("listaClientes");
+                                                List<Cliente> listaClientes = (List) misession.getAttribute("listaClientes");
                                                 for(Cliente cliente : listaClientes) { %>
 					      <tr>
                                                 <% String nomApe = cliente.getNombre() + " " + cliente.getApellido(); %>

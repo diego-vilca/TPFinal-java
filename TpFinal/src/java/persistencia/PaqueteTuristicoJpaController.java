@@ -34,7 +34,7 @@ public class PaqueteTuristicoJpaController implements Serializable {
     public PaqueteTuristicoJpaController() {
         emf = Persistence.createEntityManagerFactory("TpFinalPU");
     }
-       
+
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }

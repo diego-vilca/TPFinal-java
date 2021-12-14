@@ -35,7 +35,7 @@ si tenemos jsp en la parte de arriba-->
                                         <table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-                                                    <th>Listado de servicios</th>
+                                                    <th>Paquetes</th>
                                                     <th>Código de paquete</th>
                                                     <th>Costo del paquete</th>
 					      </tr>
@@ -43,7 +43,7 @@ si tenemos jsp en la parte de arriba-->
 					    <tbody>
 					      <% HttpSession misession = request.getSession();
 
-                                                List<PaqueteTuristico> listaPaquetes = (List) request.getSession().getAttribute("listaPaquetes");
+                                                List<PaqueteTuristico> listaPaquetes = (List) misession.getAttribute("listaPaquetes");
                                                 for(PaqueteTuristico paquete : listaPaquetes) { %>
 					      <tr>
                                                                                                 
@@ -54,7 +54,8 @@ si tenemos jsp en la parte de arriba-->
                                                     <select class="form-control" name="cboNombre"">
                                                         <% for (ServicioTuristico servicio : listaServ) {%>
                                                             
-                                                                <option><% servicio.getNombre(); %></option>    
+                                                            <% String nombreServ = servicio.getNombre(); %>
+                                                                <option><%=nombreServ %></option>    
                                                             
                                                         <% } %>
                                                             
@@ -63,7 +64,7 @@ si tenemos jsp en la parte de arriba-->
                                                 <% int id = paquete.getCodigoPaquete(); %>
 					        <td scope="row" class="scope" ><%=id %></td>
                                                 <% double costo = paquete.getCosto(); %>
-					        <td><%=costo%></td>
+					        <td>$<%=costo%></td>
                                                 
 					        <!--<td><a href="#" class="btn btn-primary">Sign Up</a></td>-->
 					      </tr>

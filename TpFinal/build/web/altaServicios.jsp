@@ -1,8 +1,7 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- %@page contentType="text/html" pageEncoding="UTF-8"% -->
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -47,7 +46,7 @@
 											<option>Hotel por noche/s</option>
 											<option>Alquiler de auto</option>
                                                                                         <option>Pasajes de colectivo</option>
-											<option>Pasajes de aviÃ³n</option>
+											<option>Pasajes de avión</option>
                                                                                         <option>Pasajes de tren</option>
                                                                                         <option>Excursiones</option>
 											<option>Entradas a Eventos</option>
@@ -58,7 +57,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Descripcion</span>
-										<input class="form-control" type="text" name="txtDescripcion" placeholder="Ingrese una descripciÃ³n" required>
+										<input class="form-control" type="text" name="txtDescripcion" placeholder="Ingrese una descripción" required>
 									</div>
 								</div>
 							</div>
@@ -68,7 +67,7 @@
 										<span class="form-label">Destino</span>
                                                                                 <select class="form-control" name="cboDestino"">
                                                                                         <option></option>
-											<option>IguazÃº</option>
+											<option>Iguazú</option>
 											<option>Bariloche</option>
                                                                                         <option>Carlos Paz</option>
 											<option>Mar del Plata</option>
@@ -77,8 +76,8 @@
 											<option>Pinamar</option>
                                                                                         <option>Puerto Madryn</option>
 											<option>Tafi del Valle</option>
-                                                                                        <option>PenÃ­nsula Valdez</option>
-                                                                                        <option>San MartÃ­n de los Andes</option>
+                                                                                        <option>Península Valdez</option>
+                                                                                        <option>San Martín de los Andes</option>
 											<option>San Rafael</option>
 										</select>
 										<span class="select-arrow"></span>

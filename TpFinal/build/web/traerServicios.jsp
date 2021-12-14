@@ -44,7 +44,7 @@ si tenemos jsp en la parte de arriba-->
 					    <tbody>
 					      <% HttpSession misession = request.getSession();
 
-                                                List<ServicioTuristico> listaServicios = (List) request.getSession().getAttribute("listaServicios");
+                                                List<ServicioTuristico> listaServicios = (List) misession.getAttribute("listaServicios");
                                                 for(ServicioTuristico servicio : listaServicios) { %>
 					      <tr>
                                                 <% String nombre = servicio.getNombre(); %>
@@ -56,7 +56,7 @@ si tenemos jsp en la parte de arriba-->
                                                 <% String destino = servicio.getDestino(); %>
 					        <td><%=destino %></td>
                                                 <% double costo = servicio.getCosto(); %>
-					        <td><%=costo%></td>
+					        <td>$<%=costo%></td>
                                                 <% Date fecha = servicio.getFecha(); 
                                                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                                                 %>

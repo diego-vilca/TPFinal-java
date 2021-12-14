@@ -47,7 +47,7 @@ si tenemos jsp en la parte de arriba-->
 					    <tbody>
 					      <% HttpSession misession = request.getSession();
 
-                                                List<Empleado> listaEmpleados = (List) request.getSession().getAttribute("listaEmpleados");
+                                                List<Empleado> listaEmpleados = (List) misession.getAttribute("listaEmpleados");
                                                 for(Empleado emp : listaEmpleados) { %>
 					      <tr>
                                                 <% String nomApe = emp.getNombre() + " " + emp.getApellido(); %>
@@ -71,7 +71,7 @@ si tenemos jsp en la parte de arriba-->
                                                 <% String cargo = emp.getCargo(); %>
                                                 <td><%=cargo%></td>
                                                 <% double sueldo = emp.getSueldo(); %>
-                                                <td><%=sueldo%></td>
+                                                <td>$<%=sueldo%></td>
 					        <!--<td><a href="#" class="btn btn-primary">Sign Up</a></td>-->
 					      </tr>
                                               <% } %>

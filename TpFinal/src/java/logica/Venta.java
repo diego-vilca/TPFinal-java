@@ -21,17 +21,47 @@ public class Venta implements Serializable {
     private Date fechaVenta;
     @Basic
     private String medioPago;
+    private Cliente cliente;
+    private Empleado empleado;
+    private ServicioTuristico servicio;
+    private PaqueteTuristico paquete;
     
     //constructores
 
     public Venta() {
     }
 
-    public Venta(int numVenta, Date fechaVenta, String medioPago) {
+    
+    public Venta(int numVenta, Date fechaVenta, String medioPago, Cliente cliente, Empleado empleado, ServicioTuristico servicio) {
         this.numVenta = numVenta;
         this.fechaVenta = fechaVenta;
         this.medioPago = medioPago;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.servicio = servicio;
     }
+
+    public Venta(int numVenta, Date fechaVenta, String medioPago, Cliente cliente, Empleado empleado, PaqueteTuristico paquete) {
+        this.numVenta = numVenta;
+        this.fechaVenta = fechaVenta;
+        this.medioPago = medioPago;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.paquete = paquete;
+    }
+    
+    
+    public Venta(int numVenta, Date fechaVenta, String medioPago, Cliente cliente, Empleado empleado, ServicioTuristico servicio, PaqueteTuristico paquete) {
+        this.numVenta = numVenta;
+        this.fechaVenta = fechaVenta;
+        this.medioPago = medioPago;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.servicio = servicio;
+        this.paquete = paquete;
+    }
+    
+    
     
     //getters y setters
 
@@ -58,7 +88,40 @@ public class Venta implements Serializable {
     public void setMedioPago(String medioPago) {
         this.medioPago = medioPago;
     }
-    
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public ServicioTuristico getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(ServicioTuristico servicio) {
+        this.servicio = servicio;
+    }
+
+    public PaqueteTuristico getPaquete() {
+        return paquete;
+    }
+
+    public void setPaquete(PaqueteTuristico paquete) {
+        this.paquete = paquete;
+    }
+
+    //Métodos
     
     
 }
