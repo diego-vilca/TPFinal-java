@@ -78,14 +78,22 @@ public class ControladoraPersistencia {
         }
     }
     
+    //Buscar
     public ServicioTuristico buscarServicio(int id) {
         return servicioJpa.findServicioTuristico(id);
     }
        
+    //Modificar
+    public void modificarServicio(ServicioTuristico servicio) {
+        try {
+            servicioJpa.edit(servicio);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
     //==========================================================================
     //métodos para los clientes
     //Alta
-
     public void crearCliente(Cliente cliente) {
         clienteJpa.create(cliente);
     }
@@ -120,6 +128,7 @@ public class ControladoraPersistencia {
     
     //==========================================================================
     //métodos para los Usuario
+    //Lectura
     public List<Usuario> traerUsuario() {
         return userJpa.findUsuarioEntities();
     }
@@ -127,19 +136,37 @@ public class ControladoraPersistencia {
     //==========================================================================
     //Métodos para los paquetes
     
+    //Alta
     public void crearPaquete(PaqueteTuristico paquete) {
         paqueteJpa.create(paquete);
     }
-
+    
+    //Lectura
     public List<PaqueteTuristico> traerPaquetes() {
         return paqueteJpa.findPaqueteTuristicoEntities();
     }
-
-    public void modificarServicio(ServicioTuristico servicio) {
+    
+    
+    //Baja
+    public void borrarPaquete(int codigo) {
         try {
-            servicioJpa.edit(servicio);
+            paqueteJpa.destroy(codigo);
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+    
+    //Buscar
+    public PaqueteTuristico buscarPaquete(int codigo) {
+        return paqueteJpa.findPaqueteTuristico(codigo);
+    }
+    
+    //Modificar
+    public void modificarPaquete(PaqueteTuristico paquete) {
+        try {
+            paqueteJpa.edit(paquete);
+        } catch (Exception e) {
+             System.out.println(e.getMessage());
         }
     }
 

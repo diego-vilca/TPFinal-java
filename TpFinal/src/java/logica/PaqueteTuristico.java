@@ -91,7 +91,15 @@ public class PaqueteTuristico implements Serializable {
         this.listaServicios.add(servicio);
     }
     
-    
+    //busca un servico en la lista y devuelve un booleano
+    public boolean encuentraServicio(int idServicio){
+        for (ServicioTuristico servicio: listaServicios) {
+            if (servicio.getCodigo() == idServicio) {
+                return true;
+            }
+        }
+        return false;
+    }
     
     
     

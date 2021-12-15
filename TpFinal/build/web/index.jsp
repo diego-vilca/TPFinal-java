@@ -10,7 +10,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TP Final - Home</title>
+	<title>TP Final - Principal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   
@@ -126,8 +126,12 @@
                                                                     <form action="SvPaquete" method="GET">
 									<li><a href="SvPaquete">Alta de Paquetes</a></li>
                                                                     </form>
-									<li><a href="#">Baja de Paquetes</a></li>
-									<li><a href="#">Modificar Paquetes</a></li>
+                                                                    <form action="SvPaqueteEliminar" method="GET">
+									<li><a href="SvPaqueteEliminar">Baja de Paquetes</a></li>
+                                                                    </form>
+                                                                    <form action="SvHaciaPaqueteModificar" method="GET">
+									<li><a href="SvHaciaPaqueteModificar">Modificar Paquetes</a></li>
+                                                                    </form>
 								</ul>
 							</li>
 							<li>

@@ -247,6 +247,21 @@ public class Controladora {
         return controlPersis.traerPaquetes();
     }
 
+    //Borrar paquete
+    public void borrarPaquete(int codigo) {
+        controlPersis.borrarPaquete(codigo);
+    }
+    
+    //Buscar paquete
+    public PaqueteTuristico buscarPaquete(int codigo) {
+        return controlPersis.buscarPaquete(codigo);
+    }
+
+    //Modificar paquete
+    public void modificarPaquete(PaqueteTuristico paquete) {
+        controlPersis.modificarPaquete(paquete);
+    }
+
     
 
     
