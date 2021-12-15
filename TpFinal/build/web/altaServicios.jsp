@@ -42,7 +42,7 @@
 									<div class="form-group">
 										<span class="form-label">Nombre</span>
                                                                                 <select class="form-control" name="cboNombre"">
-                                                                                        <option></option>
+                                                                                        <option selected disabled>Seleccione un servicio</option>
 											<option>Hotel por noche/s</option>
 											<option>Alquiler de auto</option>
                                                                                         <option>Pasajes de colectivo</option>
@@ -66,7 +66,7 @@
 									<div class="form-group">
 										<span class="form-label">Destino</span>
                                                                                 <select class="form-control" name="cboDestino"">
-                                                                                        <option></option>
+                                                                                        <option selected disabled>Seleccione un destino</option>
 											<option>Iguazú</option>
 											<option>Bariloche</option>
                                                                                         <option>Carlos Paz</option>

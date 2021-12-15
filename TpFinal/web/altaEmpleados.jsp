@@ -76,7 +76,7 @@
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
                                                                                 <select class="form-control" name="cboNac"">
-                                                                                        <option></option>
+                                                                                    <option selected disabled>Seleccione un país</option>
 											<option>Argentina</option>
 											<option>Brasil</option>
                                                                                         <option>Bolivia</option>

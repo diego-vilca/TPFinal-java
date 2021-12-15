@@ -11,16 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logica.Cliente;
 import logica.Controladora;
-import logica.Empleado;
-import logica.Usuario;
 
 
-@WebServlet(name = "SvEmpleadoModificar", urlPatterns = {"/SvEmpleadoModificar"})
-public class SvEmpleadoModificar extends HttpServlet {
-
-    Controladora control = new Controladora();
+@WebServlet(name = "SvClienteModificar", urlPatterns = {"/SvClienteModificar"})
+public class SvClienteModificar extends HttpServlet {
     
+    Controladora control = new Controladora();
+  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
@@ -32,51 +31,27 @@ public class SvEmpleadoModificar extends HttpServlet {
         
         //id
         int id = Integer.parseInt(request.getParameter("id"));
-        //nombre
-        String nombre = request.getParameter("txtNombre");
-        //apellido
-        String apellido = request.getParameter("txtApellido");
-        //direccion
-        String direccion = request.getParameter("txtDireccion");
-        //dni
-        String dni = request.getParameter("txtDni");
-        //fecha de nacimiento
-        String fechaNac = request.getParameter("txtFechaNac");
-        //nacionalidad
-        String nacionalidad = request.getParameter("cboNac");
-        //celular
-        String celular = request.getParameter("txtCelular");
-        //email
-        String email = request.getParameter("txtEmail");
-        //cargo
-        String cargo = request.getParameter("txtCargo");
-        //sueldo
-        double sueldo = Double.parseDouble(request.getParameter("txtSueldo"));
-        //usuario
-        String usuario = request.getParameter("txtUsuario");
-        //contrasenia
-        String contrasenia = request.getParameter("txtContrasenia");
         
-        //busco al empleado correspondiente
-        Empleado emple = control.buscarEmpleado(id);
-        //creo un usuario
-        Usuario usu = new Usuario();
+        String nombre = request.getParameter("txtNombre");
+        String apellido = request.getParameter("txtApellido");
+        String direccion = request.getParameter("txtDireccion");
+        String dni = request.getParameter("txtDni");
+        String fechaNac = request.getParameter("txtFechaNac");
+        String nacionalidad = request.getParameter("cboNac");
+        String celular = request.getParameter("txtCelular");
+        String email = request.getParameter("txtEmail");
         
         //===============================================
-        //seteo los cambios a mi empleado
+        //busco al empleado correspondiente
+        Cliente cliente = control.buscarCliente(id); 
         
-        emple.setNombre(nombre);
-        emple.setApellido(apellido);
-        emple.setDireccion(direccion);
-        emple.setDni(dni);
-        emple.setNacionalidad(nacionalidad);
-        emple.setCelular(celular);
-        emple.setEmail(email);
-        emple.setCargo(cargo);
-        emple.setSueldo(sueldo);
-        usu.setNombreUsuario(usuario);
-        usu.setContrasenia(contrasenia);
-        emple.setUser(usu);
+        cliente.setNombre(nombre);
+        cliente.setApellido(apellido);
+        cliente.setDireccion(direccion);
+        cliente.setDni(dni);
+        cliente.setCelular(celular);
+        cliente.setEmail(email);
+        cliente.setNacionalidad(nacionalidad);
         
         //Convierto el string fecha a Date
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
@@ -89,16 +64,16 @@ public class SvEmpleadoModificar extends HttpServlet {
             e.printStackTrace();
         }
         
-        emple.setFechaNac(fecha);
+        cliente.setFechaNac(fecha);
         
         //===============================================
         
-        control.modificarEmpleado(emple);
+        control.modificarCliente(cliente);
         
-        //actualizo mi lista de empleados
-        request.getSession().setAttribute("listaEmpleados", control.traerEmpleados());
-        response.sendRedirect("modificarEmpleados.jsp");
         
+        //actualizo mi lista de clientes
+        request.getSession().setAttribute("listaClientes", control.traerClientes());
+        response.sendRedirect("modificarClientes.jsp");
     }
 
    
@@ -110,14 +85,14 @@ public class SvEmpleadoModificar extends HttpServlet {
         //traigo id
         int id = Integer.parseInt(request.getParameter("id"));
         
-        //busco al empleado
-        Empleado emple =  control.buscarEmpleado(id);
+        //busco al cliente
+        Cliente cliente =  control.buscarCliente(id);
         
         HttpSession misession = request.getSession();
         //envio al empleado
-        misession.setAttribute("empleado", emple);
+        misession.setAttribute("cliente", cliente);
         
-        response.sendRedirect("modificarEmpleado.jsp");
+        response.sendRedirect("modificarCliente.jsp");
     }
 
     

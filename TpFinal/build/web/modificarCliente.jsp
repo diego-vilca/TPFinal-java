@@ -1,6 +1,6 @@
 
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="logica.Empleado"%>
+<%@page import="logica.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Modificar Empleado</title>
+	<title>Modificar Clientes</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
@@ -28,7 +28,6 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-        
 
 </head>
 
@@ -38,21 +37,21 @@
 			<div class="container">
 				<div class="row">
                                         <div class="booking-form">
-                                                <div class="titulo">Modificar empleados</div>
-                                                <form action="SvEmpleadoModificar" method="GET">
+                                                <div class="titulo">Modificar Clientes</div>
+                                                <form action="SvClienteModificar" method="GET">
                                                     <% HttpSession misession = request.getSession();
-                                                        Empleado emple = (Empleado) misession.getAttribute("empleado");%>
+                                                        Cliente cliente = (Cliente) misession.getAttribute("cliente");%>
 							<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nombre</span>
-                                                                                <input class="form-control" type="text" name="txtNombre" value="<%=emple.getNombre()%>" placeholder="Ingrese un nombre" required>
+										<input class="form-control" type="text" name="txtNombre" value="<%=cliente.getNombre()%>" placeholder="Ingrese un nombre" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Apellido</span>
-										<input class="form-control" type="text" name="txtApellido" value="<%=emple.getApellido()%>" placeholder="Ingrese un apellido" required>
+										<input class="form-control" type="text" name="txtApellido" value="<%=cliente.getApellido()%>" placeholder="Ingrese un apellido" required>
 									</div>
 								</div>
 							</div>
@@ -60,13 +59,13 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Dirección</span>
-										<input class="form-control" type="text" name="txtDireccion" value="<%=emple.getDireccion()%>" placeholder="Ingrese una dirección" required>
+										<input class="form-control" type="text" name="txtDireccion" value="<%=cliente.getDireccion()%>" placeholder="Ingrese una dirección" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">DNI</span>
-										<input class="form-control" type="text" name="txtDni" value="<%=emple.getDni()%>" placeholder="Ingrese un dni" required>
+										<input class="form-control" type="text" name="txtDni" value="<%=cliente.getDni()%>" placeholder="Ingrese un dni" required>
 									</div>
 								</div>
 							</div>
@@ -76,18 +75,16 @@
 										<span class="form-label">Fecha de nacimiento</span>
                                                                                 <!-- seteo el datepicker -->
                                                                                 <% SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
-                                                                                    String fecha = df.format(emple.getFechaNac());
+                                                                                    String fecha = df.format(cliente.getFechaNac());
                                                                                 %>
-                                                                                <input class="form-control" type="date"  name="txtFechaNac" id="fechaNac"  value="<%=fecha%>" placeholder="Ingrese una fecha de nacimiento" required>
-                                                                                
-                                                                               
+										<input class="form-control" type="date"  name="txtFechaNac" value="<%=fecha%>" placeholder="Ingrese una fecha de nacimiento" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
-                                                                                <select class="form-control" name="cboNac" id="nacionalidad">
-                                                                                    <option value="" selected disabled>Seleccione un pais</option>
+                                                                                <select class="form-control" id="nacionalidad" name="cboNac"">
+                                                                                    <option selected disabled="">Seleccione un pais</option>
 											<option value="Argentina">Argentina</option>
 											<option value="Brasil">Brasil</option>
                                                                                         <option value="Bolivia">Bolivia</option>
@@ -101,9 +98,8 @@
 										</select>
                                                                                 <!-- seteo por defecto el option correspondiente-->
                                                                                 <script>
-                                                                                         document.ready = document.getElementById("nacionalidad").value = "<%=emple.getNacionalidad()%>";
+                                                                                         document.ready = document.getElementById("nacionalidad").value = "<%=cliente.getNacionalidad()%>";
                                                                                 </script>
-                                                                                
 										<span class="select-arrow"></span>
 									</div>
 								</div>
@@ -112,46 +108,18 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" value="<%=emple.getCelular()%>" placeholder="Ingrese un teléfono" required>
+										<input class="form-control" type="text" name="txtCelular" value="<%=cliente.getCelular()%>" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email" name="txtEmail" value="<%=emple.getEmail()%>" placeholder="Ingrese un email" required>
+										<input class="form-control" type="email" name="txtEmail" value="<%=cliente.getEmail()%>" placeholder="Ingrese un email" required>
 									</div>
 								</div>
 							</div>
-                                                        <div class="row no-margin">
-								<div class="col-sm-6">
-									<div class="form-group">
-										<span class="form-label">Cargo</span>
-										<input class="form-control" type="text" name="txtCargo" value="<%=emple.getCargo()%>" placeholder="Ingrese un cargo" required>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<span class="form-label">Sueldo</span>
-										<input class="form-control" type="text" name="txtSueldo" value="<%=emple.getSueldo()%>" placeholder="Ingrese un sueldo" required>
-									</div>
-								</div>
-							</div>
-                                                        <div class="row no-margin">
-								<div class="col-sm-6">
-									<div class="form-group">
-										<span class="form-label">Usuario</span>
-										<input class="form-control" type="text" name="txtUsuario" value="<%=emple.getUser().getNombreUsuario()%>" placeholder="Ingrese un usuario" required>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<span class="form-label">Contraseña</span>
-										<input class="form-control" type="password" name="txtContrasenia" value="<%=emple.getUser().getContrasenia()%>" placeholder="Ingrese una contraseña" required>
-									</div>
-								</div>
-							</div>
-                                                        <input type="hidden" name="id" value="<%=emple.getId()%>">  
-							<div class="form-btn">
+                                                        <input type="hidden" name="id" value="<%=cliente.getId()%>"> 
+                                                        <div class="form-btn">
 								<button type="submit" class="submit-btn">Enviar</button>
 							</div>
 						</form>

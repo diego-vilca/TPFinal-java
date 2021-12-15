@@ -1,13 +1,14 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- Se puede sacar @page contentType="text/html" pageEncoding="UTF-8" para evitar problemas con tildes 
+si tenemos jsp en la parte de arriba-->
+<%@page import="logica.Cliente"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="logica.Empleado"%>
 <%@page import="java.util.List"%>
 <%@page import="logica.Controladora"%>
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-  	<title>Eliminar Empleados</title>
+  	<title>Eliminar Clientes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,76 +23,60 @@
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-                            <h4 class="text-center mb-4 titulo">Lista de empleados</h4>
+                            <h4 class="text-center mb-4 titulo">Lista de clientes</h4>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					
 					<div class="table-wrap">
-						<table class="table">
+                                        <table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-                                                  
                                                     <th></th>
-                                                    <th>Empleado</th>
+                                                    <th>Cliente</th>
                                                     <th>Id</th>
-                                                    <th>DirecciÃ³n</th>
+                                                    <th>Dirección</th>
                                                     <th>DNI</th>
                                                     <th>Nacionalidad</th>
                                                     <th>Fecha de Nacimiento</th>
                                                     <th>Celular</th>
                                                     <th>Email</th>
-                                                    <th>Cargo</th>
-                                                    <th>Sueldo</th>
 					      </tr>
 					    </thead>
 					    <tbody>
 					      <% HttpSession misession = request.getSession();
 
-                                                List<Empleado> listaEmpleados = (List) misession.getAttribute("listaEmpleados");
-                                                for(Empleado emp : listaEmpleados) { %>
-					      <tr>
-                                                  <!-- obtengo id -->
-                                                <% int id = emp.getId(); %>
+                                                List<Cliente> listaClientes = (List) misession.getAttribute("listaClientes");
+                                                for(Cliente cliente : listaClientes) { %>
+					      
+                                            <tr>
+                                                   <!-- obtengo id -->
+                                                <% int id = cliente.getId(); %>
                                                 <th>
-                                                    <form action="SvEmpleadoEliminar" method="post">
+                                                    <form action="SvClienteEliminar" method="post">
                                                         <input type="hidden" name="id" value="<%=id%>">
                                                         <button type="submit" class="btn btn-danger">Eliminar</button>
                                                     </form>
                                                     
                                                 </th>
-                                                
-                                                <!-- nombre y apellido -->
-                                                <% String nomApe = emp.getNombre() + " " + emp.getApellido(); %>
+                                                <% String nomApe = cliente.getNombre() + " " + cliente.getApellido(); %>
 					        <td scope="row" class="scope" ><%=nomApe %></td>
-                                                <!-- id -->
+                                                
                                                 <td scope="row" class="scope" ><%=id %></td>
-                                                <!-- direccÃ³n -->
-					        <% String direccion = emp.getDireccion(); %>
+					        <% String direccion = cliente.getDireccion(); %>
                                                 <td><%=direccion %></td>
-                                                <!-- dni -->
-                                                <% String dni = emp.getDni(); %>
+                                                <% String dni = cliente.getDni(); %>
 					        <td><%=dni %></td>
-                                                <!-- nacionalidad -->
-                                                <% String nac = emp.getNacionalidad(); %>
+                                                <% String nac = cliente.getNacionalidad(); %>
 					        <td><%=nac%></td>
-                                                <!-- fecha de nacimiento -->
-                                                <% Date fechaNac = emp.getFechaNac(); 
+                                                <% Date fechaNac = cliente.getFechaNac(); 
                                                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                                                 %>
 					        <td><%=df.format(fechaNac)%></td>
-                                                <!-- celular -->
-                                                <% String celular = emp.getCelular(); %>
+                                                <% String celular = cliente.getCelular(); %>
                                                 <td><%=celular%></td>
-                                                <!-- email -->
-                                                <% String email = emp.getEmail(); %>
+                                                <% String email = cliente.getEmail(); %>
                                                 <td><%=email%></td>
-                                                <!-- cargo -->
-                                                <% String cargo = emp.getCargo(); %>
-                                                <td><%=cargo%></td>
-                                                <!-- sueldo -->
-                                                <% double sueldo = emp.getSueldo(); %>
-                                                <td>$<%=sueldo%></td>
 					        <!--<td><a href="#" class="btn btn-primary">Sign Up</a></td>-->
 					      </tr>
                                               <% } %>
@@ -102,7 +87,7 @@
 				</div>
 			</div>
                     <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la PÃ¡gina Principal</a>
+			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
                     </div>  
                                             
 		</div>
@@ -115,5 +100,4 @@
 
 	</body>
 </html>
-
 

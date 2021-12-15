@@ -1,7 +1,7 @@
 
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="logica.Empleado"%>
-<!-- %@page contentType="text/html" pageEncoding="UTF-8" -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -59,8 +59,8 @@
 							<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Dirección</span>
-										<input class="form-control" type="text" name="txtDireccion" value="<%=emple.getDireccion()%>" placeholder="Ingrese una dirección" required>
+										<span class="form-label">DirecciÃ³n</span>
+										<input class="form-control" type="text" name="txtDireccion" value="<%=emple.getDireccion()%>" placeholder="Ingrese una direcciÃ³n" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -112,7 +112,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" value="<%=emple.getCelular()%>" placeholder="Ingrese un teléfono" required>
+										<input class="form-control" type="text" name="txtCelular" value="<%=emple.getCelular()%>" placeholder="Ingrese un telÃ©fono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -145,8 +145,8 @@
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Contraseña</span>
-										<input class="form-control" type="password" name="txtContrasenia" value="<%=emple.getUser().getContrasenia()%>" placeholder="Ingrese una contraseña" required>
+										<span class="form-label">ContraseÃ±a</span>
+										<input class="form-control" type="password" name="txtContrasenia" value="<%=emple.getUser().getContrasenia()%>" placeholder="Ingrese una contraseÃ±a" required>
 									</div>
 								</div>
 							</div>

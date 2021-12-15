@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Alta Empleados</title>
+	<title>Alta Clientes</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
@@ -76,7 +76,7 @@
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
                                                                                 <select class="form-control" name="cboNac"">
-                                                                                        <option></option>
+                                                                                    <option selected disabled>Seleccione un país</option>
 											<option>Argentina</option>
 											<option>Brasil</option>
                                                                                         <option>Bolivia</option>

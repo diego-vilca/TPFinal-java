@@ -1,5 +1,7 @@
 
-<!-- %@page contentType="text/html" pageEncoding="UTF-8"% -->
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="logica.ServicioTuristico"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,29 +37,34 @@
 			<div class="container">
 				<div class="row">
 					<div class="booking-form">
-                                                <div class="titulo">Alta de Servicio</div>
-						<form action="SvServicio" method="POST">
+                                                <div class="titulo">Modificar Servicio</div>
+						<form action="SvServicioModificar" method="GET">
+                                                    <% HttpSession misession = request.getSession();
+                                                        ServicioTuristico servicio = (ServicioTuristico) misession.getAttribute("servicio");%>
 							<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nombre</span>
-                                                                                <select class="form-control" name="cboNombre"">
+                                                                                <select class="form-control" id="nombreServicio" name="cboNombre"">
                                                                                         <option selected disabled>Seleccione un servicio</option>
 											<option>Hotel por noche/s</option>
 											<option>Alquiler de auto</option>
                                                                                         <option>Pasajes de colectivo</option>
-											<option>Pasajes de avión</option>
+											<option>Pasajes de aviÃ³n</option>
                                                                                         <option>Pasajes de tren</option>
                                                                                         <option>Excursiones</option>
 											<option>Entradas a Eventos</option>
 										</select>
+                                                                                <script>
+                                                                                         document.ready = document.getElementById("nombreServicio").value = "<%=servicio.getNombre()%>";
+                                                                                </script>
 										<span class="select-arrow"></span>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Descripcion</span>
-										<input class="form-control" type="text" name="txtDescripcion" placeholder="Ingrese una descripción" required>
+										<input class="form-control" type="text" name="txtDescripcion" value="<%=servicio.getDescripcion()%>" placeholder="Ingrese una descripciÃ³n" required>
 									</div>
 								</div>
 							</div>
@@ -65,9 +72,9 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Destino</span>
-                                                                                <select class="form-control" name="cboDestino"">
+                                                                                <select class="form-control" id="destino" name="cboDestino"">
                                                                                         <option selected disabled>Seleccione un destino</option>
-											<option>Iguazú</option>
+											<option>IguazÃº</option>
 											<option>Bariloche</option>
                                                                                         <option>Carlos Paz</option>
 											<option>Mar del Plata</option>
@@ -76,27 +83,34 @@
 											<option>Pinamar</option>
                                                                                         <option>Puerto Madryn</option>
 											<option>Tafi del Valle</option>
-                                                                                        <option>Península Valdez</option>
-                                                                                        <option>San Martín de los Andes</option>
+                                                                                        <option>PenÃ­nsula Valdez</option>
+                                                                                        <option>San MartÃ­n de los Andes</option>
 											<option>San Rafael</option>
 										</select>
+                                                                                <script>
+                                                                                         document.ready = document.getElementById("destino").value = "<%=servicio.getDestino()%>";
+                                                                                </script>
 										<span class="select-arrow"></span>
 									</div>
 								</div>
                                                                 <div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Fecha</span>
-										<input class="form-control" type="date"  name="txtFecha" placeholder="Ingrese una fecha" required>
+                                                                                <!-- seteo el datepicker -->
+                                                                                <% SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
+                                                                                    String fecha = df.format(servicio.getFecha());
+                                                                                %>
+										<input class="form-control" type="date"  name="txtFecha" value="<%=fecha%>" placeholder="Ingrese una fecha" required>
 									</div>
 								</div>
-                                                          </div>
-                                                                <div class="row no-margin">
-                                                                        <div class="form-group">
-                                                                            <span class="form-label">Costo</span>
-                                                                            <input class="form-control" type="text" name="txtCosto" placeholder="Ingrese un costo">
-                                                                        </div>
+                                                        </div>
+                                                        <div class="row no-margin">
+                                                                <div class="form-group">
+                                                                    <span class="form-label">Costo</span>
+                                                                    <input class="form-control" type="text" name="txtCosto" value="<%=servicio.getCosto()%>" placeholder="Ingrese un costo">
                                                                 </div>
-                                                        
+                                                        </div>
+                                                        <input type="hidden" name="codigo" value="<%=servicio.getCodigo()%>">  
 							<div class="form-btn">
 								<button type="submit" class="submit-btn">Enviar</button>
 							</div>

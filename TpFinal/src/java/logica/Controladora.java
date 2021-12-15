@@ -73,8 +73,8 @@ public class Controladora {
     }
     
     //Modificar empleado
-    public void ModificarEmpleado(Empleado emple) {
-        controlPersis.ModificarEmpleado(emple);
+    public void modificarEmpleado(Empleado emple) {
+        controlPersis.modificarEmpleado(emple);
     }
 
     
@@ -109,13 +109,25 @@ public class Controladora {
         controlPersis.crearServicio(servicio);
     }
     
-    //traer servicios
-    
+    //Traer servicios
     public List<ServicioTuristico> traerServicios(){
         return controlPersis.traerServicios();
     }
     
+    //Eliminar servicio
+    public void borrarServicio(int codigo) {
+        controlPersis.borrarServicio(codigo);
+    }
     
+    //Buscar servicio
+    public ServicioTuristico buscarServicio(int id) {
+        return  controlPersis.buscarServicio(id);
+    }
+    
+    //Modificar servicio
+    public void modificarServicio(ServicioTuristico servicio) {
+        controlPersis.modificarServicio(servicio);
+    }
     
     //==========================================================================
     //metodos para Cliente
@@ -148,10 +160,27 @@ public class Controladora {
         controlPersis.crearCliente(cliente);
     }
     
-    //traer clientes
+    
+    //Muestro clientes
     
     public List<Cliente> traerClientes(){
         return controlPersis.traerClientes();
+    }
+    
+    
+    //Borrar cliente
+    public void borrarCliente(int id) {
+        controlPersis.borrarCliente(id);
+    }
+    
+    //Buscar cliente
+    public Cliente buscarCliente(int id) {
+        return controlPersis.buscarCliente(id);
+    }
+    
+    //Modificar
+    public void modificarCliente(Cliente cliente) {
+        controlPersis.modificarCliente(cliente);
     }
     
     //==========================================================================
@@ -217,6 +246,18 @@ public class Controladora {
     public List<PaqueteTuristico> traerPaquetes() {
         return controlPersis.traerPaquetes();
     }
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 

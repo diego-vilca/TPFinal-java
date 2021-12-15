@@ -37,7 +37,7 @@ public class ControladoraPersistencia {
         try {
             empleadoJpa.destroy(id);
         } catch (NonexistentEntityException ex) {
-            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -47,11 +47,11 @@ public class ControladoraPersistencia {
     }
 
     //Modificar empleado
-    public void ModificarEmpleado(Empleado emple) {
+    public void modificarEmpleado(Empleado emple) {
         try {
             empleadoJpa.edit(emple);
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
     
@@ -69,6 +69,19 @@ public class ControladoraPersistencia {
         return servicioJpa.findServicioTuristicoEntities();
     }
     
+    //Baja
+    public void borrarServicio(int codigo) {
+        try {
+            servicioJpa.destroy(codigo);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public ServicioTuristico buscarServicio(int id) {
+        return servicioJpa.findServicioTuristico(id);
+    }
+       
     //==========================================================================
     //métodos para los clientes
     //Alta
@@ -82,6 +95,28 @@ public class ControladoraPersistencia {
         return clienteJpa.findClienteEntities();
     }
     
+    //Baja 
+    public void borrarCliente(int id) {
+        try {
+            clienteJpa.destroy(id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    //Buscar cliente
+    public Cliente buscarCliente(int id) {
+        return clienteJpa.findCliente(id);
+    }
+    
+    //Modificar cliente
+    public void modificarCliente(Cliente cliente) {
+        try {
+            clienteJpa.edit(cliente);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     
     //==========================================================================
     //métodos para los Usuario
@@ -99,6 +134,23 @@ public class ControladoraPersistencia {
     public List<PaqueteTuristico> traerPaquetes() {
         return paqueteJpa.findPaqueteTuristicoEntities();
     }
+
+    public void modificarServicio(ServicioTuristico servicio) {
+        try {
+            servicioJpa.edit(servicio);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    
+
+    
+    
+
+    
+
+    
 
     
 

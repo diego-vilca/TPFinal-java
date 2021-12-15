@@ -77,8 +77,12 @@
 									<li><a href="SvServicio" type="submit">Nuestros Servicios</a></li>
                                                                     </form>
 									<li><a href="altaServicios.jsp">Alta de Servicios</a></li>
-									<li><a href="#">Baja de Servicios</a></li>
-									<li><a href="#">Modificar Servicio</a></li>
+                                                                    <form action="SvServicioEliminar" method="GET">
+									<li><a href="SvServicioEliminar">Baja de Servicios</a></li>
+                                                                    </form>
+                                                                    <form action="SvHaciaServicioModificar" method="GET">
+                                                                        <li><a href="SvHaciaServicioModificar">Modificar Servicio</a></li>
+                                                                    </form>
 								</ul>
 							</li>
 							<li>
@@ -105,8 +109,12 @@
 									<li><a href="SvCliente" type="submit">Nuestros Clientes</a></li>
                                                                     </form>
 									<li><a href="altaClientes.jsp">Alta de Cliente</a></li>
-									<li><a href="#">Baja de Cliente</a></li>
-									<li><a href="#">Modificar Cliente</a></li>
+                                                                    <form action="SvClienteEliminar" method="GET">
+									<li><a href="SvClienteEliminar">Baja de Cliente</a></li>
+                                                                    </form>
+                                                                    <form action="SvHaciaClienteModificar" method="GET"> 
+									<li><a href="SvHaciaClienteModificar">Modificar Cliente</a></li>
+                                                                    </form>
 								</ul>
 							</li>
 							<li>
