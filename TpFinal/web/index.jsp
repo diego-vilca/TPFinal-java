@@ -146,7 +146,9 @@
 								<a href="#" class="fh5co-sub-ddown">Ventas</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="venta.jsp">Realizar Venta</a></li>
-									<li><a href="#">Vender un paquete</a></li>
+                                                                    <form action="SvVenta" method="GET">
+									<li><a href="SvVenta" type="submit">Mostrar Ventas</a></li>
+                                                                    </form>
 								</ul>
 							</li>
                                                         

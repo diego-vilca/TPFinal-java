@@ -178,6 +178,10 @@ public class ControladoraPersistencia {
         ventaJpa.create(miVenta);
     }
 
+    public List<Venta> traerVentas() {
+        return ventaJpa.findVentaEntities();
+    }
+
     
 
     

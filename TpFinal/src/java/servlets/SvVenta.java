@@ -4,6 +4,7 @@ package servlets;
 import java.awt.SystemColor;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +30,11 @@ public class SvVenta extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        List<Venta> ventas = control.traerVentas();
+        
+        HttpSession misession = request.getSession();
+        misession.setAttribute("listaVentas", ventas);
+        response.sendRedirect("traerVentas.jsp");
     }
 
    
@@ -57,7 +63,8 @@ public class SvVenta extends HttpServlet {
         
         control.crearVenta(id, empleado, cliente, medioPago, tipoVenta);
         
-        response.sendRedirect("index.jsp");
+        //Redirecciono a mostrar ventas
+        doGet(request, response);
         
     }
 

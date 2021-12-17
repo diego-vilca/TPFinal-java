@@ -320,6 +320,11 @@ public class Controladora {
         controlPersis.crearVenta(miVenta);
     }
 
+    //Mostrar ventas
+    public List<Venta> traerVentas() {
+        return controlPersis.traerVentas();
+    }
+
     
 
     
