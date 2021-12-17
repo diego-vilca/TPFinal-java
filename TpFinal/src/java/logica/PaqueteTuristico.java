@@ -101,7 +101,9 @@ public class PaqueteTuristico implements Serializable {
         return false;
     }
     
-    
+    public void agregarVenta(Venta venta){
+        this.listaVentas.add(venta);
+    }
     
     
     

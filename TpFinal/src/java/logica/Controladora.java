@@ -141,7 +141,7 @@ public class Controladora {
         cliente.setApellido(apellido);
         cliente.setDireccion(direccion);
         cliente.setDni(dni);
-        
+          
         //Convierto el string fecha a Date
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha= new Date();
@@ -260,6 +260,64 @@ public class Controladora {
     //Modificar paquete
     public void modificarPaquete(PaqueteTuristico paquete) {
         controlPersis.modificarPaquete(paquete);
+    }
+    
+    
+    //==========================================================================
+    //Metodos para la venta
+
+    public void crearVenta(int id, Empleado empleado, Cliente cliente, String medioPago, String tipoVenta) {
+        
+        Venta miVenta = new Venta();
+        
+        //Obtengo la fecha actual
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        Date date = new Date();  
+        String fechaStr = formatter.format(date);  
+        
+        //Obtengo la fecha actual en tipo Date
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha= new Date();
+        
+            try {
+                fecha = formato.parse(fechaStr);
+            } catch (Exception e) {
+                //imprimo la excepción
+                e.printStackTrace();
+            }
+        
+        //Creo la venta
+        if (tipoVenta.equals("servicio")) {
+            //obtengo mi servicio
+            ServicioTuristico servicio = buscarServicio(id);
+            
+            miVenta.setServicio(servicio);
+            miVenta.setCliente(cliente);
+            miVenta.setEmpleado(empleado);
+            miVenta.setMedioPago(medioPago);
+            miVenta.setFechaVenta(fecha);
+            
+            //agrego la venta a mi servicio
+            servicio.agregarVenta(miVenta);
+        }else{
+            //obtengo mi paquete
+            PaqueteTuristico paquete = buscarPaquete(id);
+            
+            miVenta.setPaquete(paquete);
+            miVenta.setCliente(cliente);
+            miVenta.setEmpleado(empleado);
+            miVenta.setMedioPago(medioPago);
+            miVenta.setFechaVenta(fecha);
+            
+            //agrego la venta a mi paquete
+            paquete.agregarVenta(miVenta);
+        }
+        
+        //Agrego la venta al empleado y al cliente
+        empleado.agregarVenta(miVenta);
+        cliente.agregarVenta(miVenta);
+        
+        controlPersis.crearVenta(miVenta);
     }
 
     

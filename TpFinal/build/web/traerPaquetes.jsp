@@ -9,16 +9,17 @@ si tenemos jsp en la parte de arriba-->
 <%@page import="logica.Controladora"%>
 <!doctype html>
 <html lang="es">
-  <head>
+        <head>
   	<title>Ver Servicios</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="assets/tabla/css/style.css">
+        
 
 	</head>
 	<body>
@@ -54,11 +55,13 @@ si tenemos jsp en la parte de arriba-->
 					        <th scope="row" class="scope" ><%=id %></th>
                                                 
                                                 <td>
-                                                    <select class="form-control" name="cboNombre"">
+                                                    <select class="form-control" name="cboNombre" onchange="verDescripcion();">
                                                         <% for (ServicioTuristico servicio : listaServ) {%>
                                                             
                                                             <% String nombreServ = servicio.getNombre(); %>
-                                                                <option><%=nombreServ %></option>    
+                                                            <% String descripcion = servicio.getDescripcion(); %>
+                                                            
+                                                            <option id="nomServ" value="<%=descripcion%>"><%=nombreServ %></option>    
                                                             
                                                         <% } %>
                                                             
@@ -86,9 +89,10 @@ si tenemos jsp en la parte de arriba-->
 	</section>
                                            
 
-	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
-
+        <script src="assets/tabla/js/jquery.min.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
+        
+        
 	</body>
 </html>

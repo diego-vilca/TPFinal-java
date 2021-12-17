@@ -123,5 +123,13 @@ public class ServicioTuristico implements Serializable {
         this.listaVentas = listaVentas;
     }
     
+    //metodos
     
+    public void agregarPaquete(PaqueteTuristico paquete){
+        this.listaPaquetes.add(paquete);
+    }
+    
+    public void agregarVenta(Venta venta){
+        this.listaVentas.add(venta);
+    }
 }

@@ -139,9 +139,11 @@ public class Cliente implements Serializable {
         this.listaVenta = listaVenta;
     }
     
-    //metodos
     
-
+    //metodos
+    public void agregarVenta(Venta venta){
+        this.listaVenta.add(venta);
+    }
     
     
     

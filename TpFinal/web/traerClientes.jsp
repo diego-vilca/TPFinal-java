@@ -21,7 +21,15 @@ si tenemos jsp en la parte de arriba-->
 
 	</head>
 	<body>
-	<section class="ftco-section">
+            <%
+                HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+                    %>
+                    <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
                             <h4 class="text-center mb-4 titulo">Lista de clientes</h4>
@@ -76,9 +84,17 @@ si tenemos jsp en la parte de arriba-->
 					</div>  
 				</div>
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
-                    </div>  
+                    <div class="d-flex justify-content-between">
+                            <div class="justify-content-center">
+                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                            </div>  
+                            <div class="justify-content-center">
+                                    <a href="altaClientes.jsp" class="btn btn-primary btn-lg">Agregar Cliente</a>
+                            </div>
+                            <div class="justify-content-center">
+                                    <a href="venta.jsp" class="btn btn-primary btn-lg">Realizar Venta</a>
+                            </div>  
+                    </div>
                                             
 		</div>
 	</section>
@@ -88,6 +104,9 @@ si tenemos jsp en la parte de arriba-->
   <script src="assets/tabla/js/bootstrap.min.js"></script>
   <script src="assets/tabla/js/main.js"></script>
 
+                    
+                    <%}%>
+	
 	</body>
 </html>
 

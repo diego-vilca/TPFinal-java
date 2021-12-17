@@ -67,9 +67,17 @@
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
 					<h1 id="fh5co-logo"><a href="index.jsp"><i class="icon-airplane"></i>Viaje Ya!</a></h1>
 					<!-- START #fh5co-menu-wrap -->
+                                        <%
+                                            HttpSession misession = request.getSession();
+                                            
+                                            String usu = (String) misession.getAttribute("usuario");
+                                            
+                                                if(usu != null){
+                                        %>
+                                        
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Principal</a></li>
+							<li class="active"><a href="index.jsp">Principal</a></li>
 							<li>
                                                                 <a href="#" class="fh5co-sub-ddown">Servicios</a>
 								<ul class="fh5co-sub-menu">
@@ -137,13 +145,28 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Ventas</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="#">Vender un servicio</a></li>
+									<li><a href="venta.jsp">Realizar Venta</a></li>
 									<li><a href="#">Vender un paquete</a></li>
 								</ul>
 							</li>
+                                                        
+							<li>
+                                                            <form action="SvUsuario" method="GET">
+                                                            <a href="SvUsuario" >log out</a>
+                                                            </form>
+                                                        </li>
+                                                        
+						</ul>
+					</nav>
+                                        
+                                        <% }else{ %>
+                                            <nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							
 							<li><a href="login.jsp">Login</a></li>
 						</ul>
 					</nav>
+                                        <%}%>
 				</div>
 			</div>
 		</header>

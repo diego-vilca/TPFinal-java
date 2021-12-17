@@ -55,8 +55,10 @@ public class SvCliente extends HttpServlet {
         
         control.crearCliente(nombre, apellido, direccion, dni, fecha, nacionalidad, celular, email);
                     
-        //Redirecciono al index
-        response.sendRedirect("index.jsp");
+        
+
+        //redirijo al listado de clientes
+        doGet(request, response);
     }
 
     @Override

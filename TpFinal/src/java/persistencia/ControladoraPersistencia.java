@@ -9,6 +9,7 @@ import logica.Empleado;
 import logica.PaqueteTuristico;
 import logica.ServicioTuristico;
 import logica.Usuario;
+import logica.Venta;
 import persistencia.exceptions.NonexistentEntityException;
 
 public class ControladoraPersistencia {
@@ -18,6 +19,7 @@ public class ControladoraPersistencia {
     ServicioTuristicoJpaController servicioJpa = new ServicioTuristicoJpaController();
     ClienteJpaController clienteJpa = new ClienteJpaController();
     PaqueteTuristicoJpaController paqueteJpa = new PaqueteTuristicoJpaController();
+    VentaJpaController ventaJpa = new VentaJpaController();
     
     //==========================================================================
     //métodos para los empleados
@@ -168,6 +170,12 @@ public class ControladoraPersistencia {
         } catch (Exception e) {
              System.out.println(e.getMessage());
         }
+    }
+    
+    //==========================================================================
+    //Alta
+    public void crearVenta(Venta miVenta) {
+        ventaJpa.create(miVenta);
     }
 
     

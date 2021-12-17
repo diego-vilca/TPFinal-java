@@ -171,8 +171,11 @@ public class Empleado implements Serializable {
         this.listaVentas = listaVentas;
     }
     
-    //métodos
     
+    //métodos
+    public void agregarVenta(Venta venta){
+        this.listaVentas.add(venta);
+    }
     
     
 }
