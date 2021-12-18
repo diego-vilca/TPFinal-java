@@ -204,6 +204,14 @@ public class ControladoraPersistencia {
         return ventaJpa.findVenta(codigo);
     }
 
+    public void modificarVenta(Venta venta) {
+        try {
+            ventaJpa.edit(venta);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     
 
     

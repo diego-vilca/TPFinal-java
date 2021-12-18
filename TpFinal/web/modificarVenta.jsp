@@ -3,9 +3,7 @@
 <%@page import="logica.PaqueteTuristico"%>
 <%@page import="logica.Cliente"%>
 <%@page import="logica.ServicioTuristico"%>
-<!-- %@page import="logica.ServicioTuristico"% -->
-<!-- Se puede sacar @page contentType="text/html" pageEncoding="UTF-8" para evitar problemas con tildes 
-si tenemos jsp en la parte de arriba-->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
@@ -27,8 +25,8 @@ si tenemos jsp en la parte de arriba-->
             // oculta/muestra servicio o paquete, segun el radio button
             function ocultar(x){
                 if (x == 0) {
-                    document.getElementById("divServicios").style.display = "block";
                     document.getElementById("divPaquetes").style.display = "none";
+                    document.getElementById("divServicios").style.display = "block";
                 }else{
                     document.getElementById("divServicios").style.display = "none";
                     document.getElementById("divPaquetes").style.display = "block";
@@ -61,7 +59,7 @@ si tenemos jsp en la parte de arriba-->
 					      <tr>
                                                     <th>Cliente</th>
                                                     <th>Id</th>
-                                                    <th>DirecciÛn</th>
+                                                    <th>Direcci√≥n</th>
                                                     <th>DNI</th>
                                                     <th>Nacionalidad</th>
                                                     <th>Fecha de Nacimiento</th>
@@ -98,10 +96,10 @@ si tenemos jsp en la parte de arriba-->
                                             
 					</div>  
                                             <!-- /////////////////////////////////////////////////////////////// -->    
+                                            <!-- Seleccionar tipo de venta -->
                                             <br><br>
                                             <div>
                                                 <p style="font-weight: bold;">-Seleccione el tipo de venta:</p>
-                                                <label class="radio-container m-r45">
                                                     <%
                                                         if (venta.getPaquete() == null) {
                                                             %><input type="radio" name="tipo" value="Servicio" onclick="ocultar(0)" id="radioServ" checked="checked"><%
@@ -113,10 +111,7 @@ si tenemos jsp en la parte de arriba-->
                                                     %>
                                                     
                                                     Servicio
-                                                    <span class="checkmark"></span>
-                                                </label>
                                                 <br>
-                                                <label class="radio-container m-r45">
                                                     <%
                                                         if (venta.getServicio() == null) {
                                                             %><input type="radio" name="tipo" value="Paquete" onclick="ocultar(1)" id="radioPaq" checked="checked"><%
@@ -128,37 +123,38 @@ si tenemos jsp en la parte de arriba-->
                                             
                                                     %>
                                                     Paquete
-                                                    <span class="checkmark"></span>
-                                                </label>
                                             </div>
                                             
                                                                                         
                                             <br><br>
-                                        <!-- /////////////////////////////////////////////////////////////// -->    
+                                         
+                                            
+
+<!-- /////////////////////////////////////////////////////////////// -->    
+                                        <!-- Formulario para la gestion del paquete -->
                                         <div class="table-wrap" id="divPaquetes" style="display: none">
                                         
-                                        <form action="SvVenta" method="POST">
-                                            <span style="font-weight: bold;">-MÈtodo de pago</span>
+                                        <form action="SvVentaModificar" method="GET" id="formP">
+                                            <span style="font-weight: bold;">-M√©todo de pago</span>
                                             <div class="col-md-4">
                                                 
-                                                <select class="form-control" name="cboPago" id="mPago">
-                                                        <option selected disabled>Seleccione un mÈtodo de pago</option>
+                                                <select class="form-control" name="cboPago" id="mPagoP">
+                                                        <option selected disabled>Seleccione un m√©todo de pago</option>
                                                         <option value="Efectivo">Efectivo</option>
-                                                        <option value="Tarjeta de DÈbito">Tarjeta de DÈbito</option>
-                                                        <option value="Tarjeta de CrÈdito">Tarjeta de CrÈdito</option>
+                                                        <option value="Tarjeta de D√©bito">Tarjeta de D√©bito</option>
+                                                        <option value="Tarjeta de Cr√©dito">Tarjeta de Cr√©dito</option>
                                                         <option value="Monedero Virtual">Monedero Virtual</option>
                                                         <option value="Transferencia">Transferencia</option>
                                                 </select>
                                                 
-                                                <% String medioPago = venta.getMedioPago();%>
+                                                <% String medioPagoP = venta.getMedioPago();%>
                                                 <!-- seteo por defecto el option correspondiente-->
                                                 <script>
-                                                         document.ready = document.getElementById("mPago").value = "<%=medioPago%>";
+                                                         document.ready = document.getElementById("mPagoP").value = "<%=medioPagoP%>";
                                                 </script>
                                                 
                                             </div>
                                                 
-                                            <!-- /////////////////////////////////////////////////////////////// --> 
                                                 
                                         <br><br>    
                                         <p style="font-weight: bold;">-Seleccione el paquete:</p>
@@ -167,7 +163,7 @@ si tenemos jsp en la parte de arriba-->
 					    <thead class="thead-primary">
 					      <tr>
                                                     <th></th>
-                                                    <th>CÛdigo de paquete</th>
+                                                    <th>C√≥digo de paquete</th>
                                                     <th>Paquete</th>
                                                     <th>Costo del paquete</th>
 					      </tr>
@@ -176,25 +172,39 @@ si tenemos jsp en la parte de arriba-->
 					      <% 
 
                                                 List<PaqueteTuristico> listaPaquetes = (List) misession.getAttribute("listaPaquetes");
+                                                int flagP = 0;
+                                                
                                                 for(PaqueteTuristico paquete : listaPaquetes) { %>
 					      <tr>
                                                                                                 
                                                 
-					        <% List<ServicioTuristico> listaServ = paquete.getListaServicios(); %>
                                                                                                                                                 
                                                 <% int codPaquete = paquete.getCodigoPaquete(); %>
-                                                <th cope="row" class="scope"><input type="radio" name="selPaquete" value="<%=codPaquete %>" /></th>
+                                                
+                                                
+                                                <th cope="row" class="scope">
+                                                    <%//Selecciono el paquete que se le asigno en el alta de la venta
+                                                        
+                                                        
+                                                    if (venta.getPaquete() != null && codPaquete == venta.getPaquete().getCodigoPaquete() && flagP == 0 ) {
+                                                        %><input type="radio" name="selPaquete" value="<%=codPaquete %>" checked="checked" /><% 
+                                                            flagP = 1;
+                                                    }else{
+                                                        %><input type="radio" name="selPaquete" value="<%=codPaquete %>" /><%  
+                                                    }
+                                                    %>
+                                                </th>
+                                                
                                                 
 					        <td scope="row" class="scope" ><%=codPaquete %></td>
                                                 
                                                 <td>
-                                                    <select class="form-control" name="cboNombre" onchange="verDescripcion();">
-                                                        <% for (ServicioTuristico servicio : listaServ) {%>
+                                                    <select class="form-control" name="cboNombre"">
+                                                        <% for (ServicioTuristico servicio : paquete.getListaServicios()) {%>
                                                             
                                                             <% String nombreServ = servicio.getNombre(); %>
-                                                            <% String descripcion = servicio.getDescripcion(); %>
                                                             
-                                                            <option id="nomServ" value="<%=descripcion%>"><%=nombreServ %></option>    
+                                                            <option id="nomServ" ><%=nombreServ %></option>    
                                                             
                                                         <% } %>
                                                             
@@ -210,6 +220,7 @@ si tenemos jsp en la parte de arriba-->
 					    </tbody>
 					  </table>
                                             <div class="row justify-content-center">
+                                                <input type="hidden" name="numVenta" value="<%=venta.getNumVenta()%>">  
                                                 <input type="hidden" name="tipoVenta" value="paquete"> 
                                                 <div class="form-btn">
                                                     <button type="submit" class="btn btn-primary btn-lg">Seleccionar Paquete</button>
@@ -221,20 +232,28 @@ si tenemos jsp en la parte de arriba-->
 					 
                                         </div>
                                             
-                                            <!-- /////////////////////////////////////////////////////////////// -->   
+                                            
+                                        
+<!-- /////////////////////////////////////////////////////////////// -->   
+                                            <!-- Formulario para la gestion del servicio -->
                                         <div class="table-wrap" id="divServicios" style="display: none">
-                                        <form action="SvVenta" method="POST">     
-                                        <span style="font-weight: bold;">-MÈtodo de pago</span>
+                                        <form action="SvVentaModificar" method="GET" id="formS">     
+                                        <span style="font-weight: bold;">-M√©todo de pago</span>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="cboPago"">
-                                                        <option selected disabled>Seleccione un mÈtodo de pago</option>
+                                                <select class="form-control" id="mPagoS" name="cboPago"">
+                                                        <option selected disabled>Seleccione un m√©todo de pago</option>
                                                         <option>Efectivo</option>
-                                                        <option>Tarjeta de DÈbito</option>
-                                                        <option>Tarjeta de CrÈdito</option>
+                                                        <option>Tarjeta de D√©bito</option>
+                                                        <option>Tarjeta de Cr√©dito</option>
                                                         <option>Monedero Virtual</option>
                                                         <option>Transferencia</option>
                                                 </select>
                                                 
+                                                <% String medioPagoS = venta.getMedioPago();%>
+                                                <!-- seteo por defecto el option correspondiente-->
+                                                <script>
+                                                         document.ready = document.getElementById("mPagoS").value = "<%=medioPagoS%>";
+                                                </script>
                                             </div>
                                                 
                                         <br><br>    
@@ -246,7 +265,7 @@ si tenemos jsp en la parte de arriba-->
                                                     <th></th>
                                                     <th>Servicio</th>
                                                     <th>Id</th>
-                                                    <th>DescripciÛn</th>
+                                                    <th>Descripci√≥n</th>
                                                     <th>Destino</th>
                                                     <th>Costo</th>
                                                     <th>Fecha</th>
@@ -255,10 +274,30 @@ si tenemos jsp en la parte de arriba-->
 					    <tbody>
 					      <%
                                                 List<ServicioTuristico> listaServicios = (List) misession.getAttribute("listaServicios");
+                                                int flagS = 0;
+                                                                                                
                                                 for(ServicioTuristico servicio : listaServicios) { %>
 					      <tr>
                                                 <% int codigo = servicio.getCodigo(); %>
-                                                <th cope="row" class="scope"><input type="radio" name="selServicio" value="<%=codigo %>" /></th>
+                                                
+                                                
+                                                <th cope="row" class="scope">
+                                                    
+                                                    
+                                                    <%//Selecciono el servicio que se le asigno en el alta de la venta
+                                                        
+                                                        
+                                                    if (venta.getServicio() != null && codigo == venta.getServicio().getCodigo() && flagS == 0 ) {
+                                                        %><input type="radio" name="selServicio" value="<%=codigo %>" checked="checked" /><% 
+                                                            flagS = 1;
+                                                    }else{
+                                                        %><input type="radio" name="selServicio" value="<%=codigo %>" /><%  
+                                                    }
+                                                    %>
+                                                    
+                                                </th>
+                                                
+                                                
                                                 <% String nombre = servicio.getNombre(); %>
 					        <td scope="row" class="scope" ><%=nombre %></td>
                                                 
@@ -279,6 +318,7 @@ si tenemos jsp en la parte de arriba-->
 					    </tbody>
 					  </table>
                                             <div class="row justify-content-center">
+                                                <input type="hidden" name="numVenta" value="<%=venta.getNumVenta()%>">  
                                                 <input type="hidden" name="tipoVenta" value="servicio"> 
                                                 <div class="form-btn">
                                                     <button type="submit" class="btn btn-primary btn-lg">Seleccionar Servicio</button>
@@ -287,27 +327,29 @@ si tenemos jsp en la parte de arriba-->
                                             </form>
                                             
 					</div> 
+
+                                       
                                             
                                             
 			</div>
                     <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la P·gina Principal</a>
+			<a href="index.jsp" class="btn-volver">Ir a la P√°gina Principal</a>
                     </div>  
                                             
 		</div>
 	</section>
                                            
         <script>
-            //muestra/oculta los divs correspondientes al radio button checkeado al cargar la p·gina.
-            //la funciÛn que hacia esto no funcionaba con el valor del radio por defecto al cargar la web
+            //muestra/oculta los divs correspondientes al radio button checkeado al cargar la p√°gina.
+            //la funci√≥n que hacia esto no funcionaba con el valor del radio por defecto al cargar la web
             
-            if(document.getElementById('radioServ') != null && document.getElementById('radioServ').checked) {
+            if(document.getElementById('radioServ') !== null && document.getElementById('radioServ').checked) {
                     document.getElementById("divServicios").style.display = "block";
-                    document.getElementById("divPaquetes").style.display = "none";
+//                    document.getElementById("divPaquetes").style.display = "none";
              }
              
-            if(document.getElementById('radioPaq') != null &&  document.getElementById('radioPaq').checked) {
-                document.getElementById("divServicios").style.display = "none";
+            if(document.getElementById('radioPaq') !== null &&  document.getElementById('radioPaq').checked) {
+//                document.getElementById("divServicios").style.display = "none";
                 document.getElementById("divPaquetes").style.display = "block";
             }
         </script>

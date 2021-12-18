@@ -344,6 +344,10 @@ public class Controladora {
         return controlPersis.buscarVenta(codigo);
     }
 
+    public void modificarVenta(Venta venta) {
+        controlPersis.modificarVenta(venta);
+    }
+
     
 
     

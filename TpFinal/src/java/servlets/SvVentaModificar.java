@@ -3,6 +3,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +29,55 @@ public class SvVentaModificar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //numVenta
+        int numVenta = Integer.parseInt(request.getParameter("numVenta"));
+        //tipo de pedido que realiza
+        String tipoVenta = request.getParameter("tipoVenta");
+        //busco mi venta
+        Venta venta = control.buscarVenta(numVenta);
+        
+        //Obtengo la fecha actual
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        Date date = new Date();  
+        String fechaStr = formatter.format(date);  
+        
+        //Obtengo la fecha actual en tipo Date
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha= new Date();
+        
+            try {
+                fecha = formato.parse(fechaStr);
+            } catch (Exception e) {
+                //imprimo la excepción
+                e.printStackTrace();
+            }
+        
+        //seteo la fecha de la modificacion
+        venta.setFechaVenta(fecha);
+        
+        //seteo el servicio o paquete a la venta
+        if (tipoVenta.equals("servicio")) {
+            int idServ = Integer.parseInt(request.getParameter("selServicio"));
+            venta.setServicio(control.buscarServicio(idServ));
+            venta.setPaquete(null);
+        }else{
+            int idPaq = Integer.parseInt(request.getParameter("selPaquete"));
+            venta.setPaquete(control.buscarPaquete(idPaq));
+            venta.setServicio(null);
+        }
+        
+        //seteo medio de pago
+        venta.setMedioPago(request.getParameter("cboPago"));
+        
+        //==================================================
+        
+        control.modificarVenta(venta);
+        
+        //actualizo mi lista de empleados
+        request.getSession().setAttribute("listaVentas", control.traerVentas());
+        response.sendRedirect("modificarVentas.jsp");
+        
+       
     }
 
     
