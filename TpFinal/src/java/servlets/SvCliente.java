@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logica.Cliente;
 import logica.Controladora;
+import logica.Venta;
 
 
 @WebServlet(name = "SvCliente", urlPatterns = {"/SvCliente"})
@@ -33,6 +34,11 @@ public class SvCliente extends HttpServlet {
         processRequest(request, response);
         
         List<Cliente> listaClientes = control.traerClientes();
+        
+//        for (Cliente cliente : listaClientes) {
+//            List<Venta> lVentas = cliente.getListaVenta();
+//            System.out.println(lVentas.size());
+//        }
         
         HttpSession misession = request.getSession();
         misession.setAttribute("listaClientes", listaClientes);

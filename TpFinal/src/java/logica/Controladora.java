@@ -202,6 +202,10 @@ public class Controladora {
         return false;
     }
     
+    public void borrarUsuario(int idUser) {
+        controlPersis.borrarUsuario(idUser);
+    }
+    
     //==========================================================================
     //Metodos para Paquetes
     //Alta
@@ -269,6 +273,8 @@ public class Controladora {
     public void crearVenta(int id, Empleado empleado, Cliente cliente, String medioPago, String tipoVenta) {
         
         Venta miVenta = new Venta();
+        ServicioTuristico auxS = new ServicioTuristico();
+        PaqueteTuristico auxP = new PaqueteTuristico();
         
         //Obtengo la fecha actual
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
@@ -298,7 +304,9 @@ public class Controladora {
             miVenta.setFechaVenta(fecha);
             
             //agrego la venta a mi servicio
-            servicio.agregarVenta(miVenta);
+//            servicio.agregarVenta(miVenta);
+            auxS = servicio;
+            
         }else{
             //obtengo mi paquete
             PaqueteTuristico paquete = buscarPaquete(id);
@@ -310,20 +318,33 @@ public class Controladora {
             miVenta.setFechaVenta(fecha);
             
             //agrego la venta a mi paquete
-            paquete.agregarVenta(miVenta);
+//            paquete.agregarVenta(miVenta);
+            auxP = paquete;
         }
+        
+        controlPersis.crearVenta(miVenta);
         
         //Agrego la venta al empleado y al cliente
         empleado.agregarVenta(miVenta);
         cliente.agregarVenta(miVenta);
-        
-        controlPersis.crearVenta(miVenta);
+        auxS.agregarVenta(miVenta);
+        auxP.agregarVenta(miVenta);
     }
 
     //Mostrar ventas
     public List<Venta> traerVentas() {
         return controlPersis.traerVentas();
     }
+
+    public void borrarVenta(int codVenta) {
+        controlPersis.borrarVenta(codVenta);
+    }
+
+    public Venta buscarVenta(int codigo) {
+        return controlPersis.buscarVenta(codigo);
+    }
+
+    
 
     
 

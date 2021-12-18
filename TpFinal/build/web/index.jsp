@@ -149,6 +149,12 @@
                                                                     <form action="SvVenta" method="GET">
 									<li><a href="SvVenta" type="submit">Mostrar Ventas</a></li>
                                                                     </form>
+                                                                    <form action="SvVentaEliminar" method="GET">
+									<li><a href="SvVentaEliminar" type="submit">Eliminar Ventas</a></li>
+                                                                    </form>
+                                                                    <form action="SvHaciaVentaModificar" method="GET">
+                                                                        <li><a href="SvHaciaVentaModificar" type="submit">Modificar Ventas</a></li>
+                                                                    </form>
 								</ul>
 							</li>
                                                         

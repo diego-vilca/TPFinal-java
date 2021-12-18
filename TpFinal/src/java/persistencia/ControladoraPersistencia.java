@@ -135,6 +135,14 @@ public class ControladoraPersistencia {
         return userJpa.findUsuarioEntities();
     }
     
+    public void borrarUsuario(int id) {
+        try {
+            userJpa.destroy(id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
     //==========================================================================
     //Métodos para los paquetes
     
@@ -173,6 +181,8 @@ public class ControladoraPersistencia {
     }
     
     //==========================================================================
+    //Métodos para Venta
+    
     //Alta
     public void crearVenta(Venta miVenta) {
         ventaJpa.create(miVenta);
@@ -181,6 +191,20 @@ public class ControladoraPersistencia {
     public List<Venta> traerVentas() {
         return ventaJpa.findVentaEntities();
     }
+
+    public void borrarVenta(int codVenta) {
+        try {
+            ventaJpa.destroy(codVenta);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public Venta buscarVenta(int codigo) {
+        return ventaJpa.findVenta(codigo);
+    }
+
+    
 
     
 

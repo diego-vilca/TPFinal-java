@@ -12,7 +12,7 @@ si tenemos jsp en la parte de arriba-->
 <!doctype html>
 <html lang="es">
   <head>
-  	<title>Ver Ventas</title>
+  	<title>Eliminar Venta</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -36,6 +36,7 @@ si tenemos jsp en la parte de arriba-->
                                         <table class="table">
 					    <thead class="thead-primary">
 					      <tr>
+                                                    <th></th>
                                                     <th>N° de Venta</th>
                                                     <th>Fecha</th>
                                                     <th>Medio de Pago</th>
@@ -53,7 +54,15 @@ si tenemos jsp en la parte de arriba-->
                                                 for(Venta venta : listaVentas) { %>
 					      <tr>
                                                 <% int numVenta = venta.getNumVenta(); %>
-					        <th scope="row" class="scope" ><%=numVenta %></th>
+                                                <th>
+                                                    <form action="SvVentaEliminar" method="post">
+                                                        <input type="hidden" name="codVenta" value="<%=numVenta%>">
+                                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                    </form>
+                                                    
+                                                </th>
+                                                
+					        <td scope="row" class="scope" ><%=numVenta %></td>
                                                 <% Date fecha = venta.getFechaVenta(); 
                                                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                                                 %>
@@ -148,4 +157,3 @@ si tenemos jsp en la parte de arriba-->
 
 	</body>
 </html>
-

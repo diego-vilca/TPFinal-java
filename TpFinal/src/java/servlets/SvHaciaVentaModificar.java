@@ -11,53 +11,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logica.Controladora;
-import logica.Empleado;
+import logica.Venta;
 
-
-@WebServlet(name = "SvEmpleadoEliminar", urlPatterns = {"/SvEmpleadoEliminar"})
-public class SvEmpleadoEliminar extends HttpServlet {
+@WebServlet(name = "SvHaciaVentaModificar", urlPatterns = {"/SvHaciaVentaModificar"})
+public class SvHaciaVentaModificar extends HttpServlet {
 
     Controladora control = new Controladora();
-    
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
 
-   
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Empleado> listaEmple = control.traerEmpleados();
+        List<Venta> listaVentas = control.traerVentas();
         
         HttpSession misession = request.getSession();
-        misession.setAttribute("listaEmpleados", listaEmple);
-        response.sendRedirect("eliminarEmpleados.jsp");
-        
+        misession.setAttribute("listaVentas", listaVentas);
+        response.sendRedirect("modificarVentas.jsp");
     }
 
-  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int id = Integer.parseInt(request.getParameter("id"));
-        int idUser = control.buscarEmpleado(id).getUser().getId();
-        
-        
-        //borro el empleado con la id correspondiente
-        control.borrarEmpleado(id);
-        
-        //borro al usuario relacionado
-        control.borrarUsuario(idUser);
-        
-        //envio la lista actualizada de empleados
-        request.getSession().setAttribute("listaEmpleados", control.traerEmpleados());
-        
-        response.sendRedirect("eliminarEmpleados.jsp");
-        
     }
 
+    
     @Override
     public String getServletInfo() {
         return "Short description";

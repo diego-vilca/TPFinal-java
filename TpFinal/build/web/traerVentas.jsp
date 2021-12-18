@@ -12,7 +12,7 @@ si tenemos jsp en la parte de arriba-->
 <!doctype html>
 <html lang="es">
   <head>
-  	<title>Ver Servicios</title>
+  	<title>Ver Ventas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,7 +27,7 @@ si tenemos jsp en la parte de arriba-->
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-                            <h4 class="text-center mb-4 titulo">Lista de servicios</h4>
+                            <h4 class="text-center mb-4 titulo">Listado de Ventas</h4>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -81,8 +81,20 @@ si tenemos jsp en la parte de arriba-->
                                                 
                                                 <td>
                                                     <%
-                                                      try {%>
-                                                           <select class="form-control" name="cboNombre" >
+                                                        
+                                                      try {
+                                                          
+                                                          //Si no hay paquete, no muestro el select
+                                                            if (venta.getPaquete().getListaServicios() == null) {
+                                                    %>          <script>
+                                                                    let e = document.getElementById('sPaquete');
+                                                                    e.style.visibility = 'hidden';
+                                                                </script><%
+                                                            }
+                                                    %>
+                                                            
+                                                      
+                                                           <select class="form-control" name="cboNombre" id="sPaquete" >
                                                     
                                                         <% for (ServicioTuristico serv : venta.getPaquete().getListaServicios()) {%>
                                                             
@@ -92,9 +104,9 @@ si tenemos jsp en la parte de arriba-->
                                                             
                                                         <% } %>
                                                             
-                                                            </select>   
+                                                           </select>   
                                                           <%} catch (Exception e) {
-                                                          
+                                                                
                                                                 %><span>-</span><%
                                                           }
   
