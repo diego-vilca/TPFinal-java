@@ -50,6 +50,9 @@ public class Controladora {
         //Asigno el usuario y contraña al empleado creado
         empleado.setUser(user);
         
+        /*cambio*/
+        empleado.setListaVentas(null);
+        
         //Envio mis objetos para que puedan ser creados en persistencia
         controlPersis.crearEmpleado(empleado, user);
     }
@@ -106,6 +109,11 @@ public class Controladora {
         //asigno la fecha al servicio
         servicio.setFecha(fechaF);
         
+        /*cambio*/
+        servicio.setListaPaquetes(null);
+        servicio.setListaVentas(null);
+        /*fin cambio*/
+        
         controlPersis.crearServicio(servicio);
     }
     
@@ -156,6 +164,9 @@ public class Controladora {
         cliente.setNacionalidad(nacionalidad);
         cliente.setCelular(celular);
         cliente.setEmail(email);
+        
+        /*cambio*/
+        cliente.setListaVenta(null);
         
         controlPersis.crearCliente(cliente);
     }
@@ -240,6 +251,10 @@ public class Controladora {
         
         //asigno el costo al paquete
         paquete.setCosto(costoFinal);
+        
+        /* cambio */
+        
+        paquete.setListaVentas(null);
         
         
         controlPersis.crearPaquete(paquete);

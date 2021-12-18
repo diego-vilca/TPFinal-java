@@ -72,7 +72,7 @@
                                             
                                             String usu = (String) misession.getAttribute("usuario");
                                             
-                                                if(usu != null){
+                                                if(usu != null){  
                                         %>
                                         
 					<nav id="fh5co-menu-wrap" role="navigation">
@@ -167,14 +167,14 @@
 						</ul>
 					</nav>
                                         
-                                        <% }else{ %>
+                                        <%  }else{   %>
                                             <nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							
 							<li><a href="login.jsp">Login</a></li>
 						</ul>
 					</nav>
-                                        <%}%>
+                                        <%  }   %>
 				</div>
 			</div>
 		</header>

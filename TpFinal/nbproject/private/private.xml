@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/web/modificarPaquete.jsp</file>
-            <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/web/modificarVenta.jsp</file>
             <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/src/java/servlets/SvVenta.java</file>
-            <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/src/java/servlets/SvVentaModificar.java</file>
-            <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/web/altaVentas.jsp</file>
+            <file>file:/C:/Users/Diego/Desktop/diego/PROGRAMACION/POLOTIC-SILICON/TP-integrador-java/TpFinal/src/java/logica/Controladora.java</file>
         </group>
     </open-files>
 </project-private>
