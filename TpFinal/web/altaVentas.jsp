@@ -125,8 +125,8 @@ si tenemos jsp en la parte de arriba-->
                                         <form action="SvVenta" method="POST">
                                             <span style="font-weight: bold;">-Método de pago</span>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="cboPago"">
-                                                        <option selected disabled>Seleccione un método de pago</option>
+                                                <select class="form-control" name="cboPago" required="required">
+                                                        <option selected disabled></option>
                                                         <option>Efectivo</option>
                                                         <option>Tarjeta de Débito</option>
                                                         <option>Tarjeta de Crédito</option>
@@ -159,7 +159,7 @@ si tenemos jsp en la parte de arriba-->
 					        <% List<ServicioTuristico> listaServ = paquete.getListaServicios(); %>
                                                                                                                                                 
                                                 <% int codPaquete = paquete.getCodigoPaquete(); %>
-                                                <th cope="row" class="scope"><input type="radio" name="selPaquete" value="<%=codPaquete %>" /></th>
+                                                <th cope="row" class="scope"><input type="radio" name="selPaquete" value="<%=codPaquete %>" required="required"/></th>
                                                 
 					        <td scope="row" class="scope" ><%=codPaquete %></td>
                                                 
@@ -202,8 +202,8 @@ si tenemos jsp en la parte de arriba-->
                                         <form action="SvVenta" method="POST">     
                                         <span style="font-weight: bold;">-Método de pago</span>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="cboPago"">
-                                                        <option selected disabled>Seleccione un método de pago</option>
+                                                <select class="form-control" name="cboPago" required="required">
+                                                        <option selected disabled></option>
                                                         <option>Efectivo</option>
                                                         <option>Tarjeta de Débito</option>
                                                         <option>Tarjeta de Crédito</option>
@@ -234,7 +234,7 @@ si tenemos jsp en la parte de arriba-->
                                                 for(ServicioTuristico servicio : listaServicios) { %>
 					      <tr>
                                                 <% int codigo = servicio.getCodigo(); %>
-                                                <th cope="row" class="scope"><input type="radio" name="selServicio" value="<%=codigo %>" /></th>
+                                                <th cope="row" class="scope"><input type="radio" name="selServicio" value="<%=codigo %>" required="required" /></th>
                                                 <% String nombre = servicio.getNombre(); %>
 					        <td scope="row" class="scope" ><%=nombre %></td>
                                                 
@@ -266,20 +266,20 @@ si tenemos jsp en la parte de arriba-->
                                             
                                             
 			</div>
-                    <div class="d-flex justify-content-between">
-                            <div class="justify-content-center">
-                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
-                            </div>  
-                            
-                    </div>  
+                        <div class="d-flex justify-content-between">
+                                <div class="justify-content-center">
+                                        <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                                </div>  
+
+                        </div>  
                                             
 		</div>
 	</section>
                                            
 
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
 
     <%}%>
         </body>

@@ -49,8 +49,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nombre</span>
-                                                                                <select class="form-control" name="cboNombre"">
-                                                                                        <option selected disabled>Seleccione un servicio</option>
+                                                                                <select class="form-control" name="cboNombre" required="required">
+                                                                                        <option selected disabled></option>
 											<option>Hotel por noche/s</option>
 											<option>Alquiler de auto</option>
                                                                                         <option>Pasajes de colectivo</option>
@@ -73,8 +73,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Destino</span>
-                                                                                <select class="form-control" name="cboDestino"">
-                                                                                        <option selected disabled>Seleccione un destino</option>
+                                                                                <select class="form-control" name="cboDestino" required="required">
+                                                                                        <option selected disabled></option>
 											<option>Iguazú</option>
 											<option>Bariloche</option>
                                                                                         <option>Carlos Paz</option>
@@ -101,7 +101,7 @@
                                                                 <div class="row no-margin">
                                                                         <div class="form-group">
                                                                             <span class="form-label">Costo</span>
-                                                                            <input class="form-control" type="text" name="txtCosto" placeholder="Ingrese un costo">
+                                                                            <input class="form-control" type="number" name="txtCosto" placeholder="Ingrese un costo" required>
                                                                         </div>
                                                                 </div>
                                                         

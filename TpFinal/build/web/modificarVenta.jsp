@@ -112,6 +112,8 @@
                                             <div>
                                                 <p style="font-weight: bold;">-Seleccione el tipo de venta:</p>
                                                     <%
+                                                        //Seteo los radio buttons con el tipo que se eligio originalmente en la venta.
+                                                        
                                                         if (venta.getPaquete() == null) {
                                                             %><input type="radio" name="tipo" value="Servicio" onclick="ocultar(0)" id="radioServ" checked="checked"><%
                                                                   
@@ -149,8 +151,8 @@
                                             <span style="font-weight: bold;">-Método de pago</span>
                                             <div class="col-md-4">
                                                 
-                                                <select class="form-control" name="cboPago" id="mPagoP">
-                                                        <option selected disabled>Seleccione un método de pago</option>
+                                                <select class="form-control" name="cboPago" id="mPagoP" required="required">
+                                                        <option selected disabled></option>
                                                         <option value="Efectivo">Efectivo</option>
                                                         <option value="Tarjeta de Débito">Tarjeta de Débito</option>
                                                         <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
@@ -209,8 +211,8 @@
                                                 
 					        <td scope="row" class="scope" ><%=codPaquete %></td>
                                                 
-                                                <td>
-                                                    <select class="form-control" name="cboNombre"">
+                                                <td><><!-- servicios del paquete -->
+                                                    <select class="form-control" name="cboNombre" required="required">
                                                         <% for (ServicioTuristico servicio : paquete.getListaServicios()) {%>
                                                             
                                                             <% String nombreServ = servicio.getNombre(); %>
@@ -251,8 +253,8 @@
                                         <form action="SvVentaModificar" method="GET" id="formS">     
                                         <span style="font-weight: bold;">-Método de pago</span>
                                             <div class="col-md-4">
-                                                <select class="form-control" id="mPagoS" name="cboPago"">
-                                                        <option selected disabled>Seleccione un método de pago</option>
+                                                <select class="form-control" id="mPagoS" name="cboPago" required="required">
+                                                        <option selected disabled></option>
                                                         <option>Efectivo</option>
                                                         <option>Tarjeta de Débito</option>
                                                         <option>Tarjeta de Crédito</option>

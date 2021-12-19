@@ -167,6 +167,16 @@ a{
         color: white;
 }
 
+input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+  
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
 @media only screen and (max-width: 767px) {
 	.booking-form [class*="col-"]+[class*="col-"] .form-group .form-control {
 		border-left: 1px solid #dddee9;

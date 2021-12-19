@@ -26,7 +26,7 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+        
 </head>
 
 <body>
@@ -70,7 +70,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">DNI</span>
-										<input class="form-control" type="text" name="txtDni" placeholder="Ingrese un dni" required>
+										<input class="form-control" type="number" name="txtDni" placeholder="Ingrese un dni" required>
 									</div>
 								</div>
 							</div>
@@ -84,8 +84,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
-                                                                                <select class="form-control" name="cboNac"">
-                                                                                    <option selected disabled>Seleccione un país</option>
+                                                                                <select class="form-control" name="cboNac" required="required">
+                                                                                    <option selected disabled></option>
 											<option>Argentina</option>
 											<option>Brasil</option>
                                                                                         <option>Bolivia</option>
@@ -105,7 +105,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" placeholder="Ingrese un teléfono" required>
+										<input class="form-control" type="number" name="txtCelular" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">

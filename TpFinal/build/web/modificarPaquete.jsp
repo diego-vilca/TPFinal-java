@@ -70,7 +70,7 @@
                                                 <% int codigo = servicio.getCodigo(); %>
                                                         
                                                             <% for (ServicioTuristico servPaquete : paquete.getListaServicios()) {
-                                                                
+                                                                //si el servicio se encuentra en mi paquete, lo tildo.
                                                                       if (servicio.getCodigo() == servPaquete.getCodigo()) { 
                                                                                 checked = "checked";
                                                                                 flag = 1; %>

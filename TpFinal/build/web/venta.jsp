@@ -55,7 +55,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">DNI</span>
-										<input class="form-control" type="text" name="txtDni" placeholder="Ingrese un dni" required>
+										<input class="form-control" type="number" name="txtDni" placeholder="Ingrese un dni" required>
 									</div>
 								</div>
 							</div>

@@ -57,8 +57,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nombre</span>
-                                                                                <select class="form-control" id="nombreServicio" name="cboNombre"">
-                                                                                        <option selected disabled>Seleccione un servicio</option>
+                                                                                <select class="form-control" id="nombreServicio" name="cboNombre" required="required">
+                                                                                        <option selected disabled></option>
 											<option>Hotel por noche/s</option>
 											<option>Alquiler de auto</option>
                                                                                         <option>Pasajes de colectivo</option>
@@ -68,6 +68,7 @@
 											<option>Entradas a Eventos</option>
 										</select>
                                                                                 <script>
+                                                                                    //seteo el combo box con el valor original 
                                                                                          document.ready = document.getElementById("nombreServicio").value = "<%=servicio.getNombre()%>";
                                                                                 </script>
 										<span class="select-arrow"></span>
@@ -84,8 +85,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Destino</span>
-                                                                                <select class="form-control" id="destino" name="cboDestino"">
-                                                                                        <option selected disabled>Seleccione un destino</option>
+                                                                                <select class="form-control" id="destino" name="cboDestino" required="required">
+                                                                                        <option selected disabled></option>
 											<option>Iguazú</option>
 											<option>Bariloche</option>
                                                                                         <option>Carlos Paz</option>
@@ -119,7 +120,7 @@
                                                         <div class="row no-margin">
                                                                 <div class="form-group">
                                                                     <span class="form-label">Costo</span>
-                                                                    <input class="form-control" type="text" name="txtCosto" value="<%=servicio.getCosto()%>" placeholder="Ingrese un costo">
+                                                                    <input class="form-control" type="number" name="txtCosto" value="<%=servicio.getCosto()%>" placeholder="Ingrese un costo" required>
                                                                 </div>
                                                         </div>
                                                                 

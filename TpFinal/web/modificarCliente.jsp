@@ -77,7 +77,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">DNI</span>
-										<input class="form-control" type="text" name="txtDni" value="<%=cliente.getDni()%>" placeholder="Ingrese un dni" required>
+										<input class="form-control" type="number" name="txtDni" value="<%=cliente.getDni()%>" placeholder="Ingrese un dni" required>
 									</div>
 								</div>
 							</div>
@@ -95,8 +95,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
-                                                                                <select class="form-control" id="nacionalidad" name="cboNac"">
-                                                                                    <option selected disabled="">Seleccione un pais</option>
+                                                                                <select class="form-control" id="nacionalidad" name="cboNac" required="required">
+                                                                                    <option selected disabled=""></option>
 											<option value="Argentina">Argentina</option>
 											<option value="Brasil">Brasil</option>
                                                                                         <option value="Bolivia">Bolivia</option>
@@ -120,7 +120,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" value="<%=cliente.getCelular()%>" placeholder="Ingrese un teléfono" required>
+										<input class="form-control" type="number" name="txtCelular" value="<%=cliente.getCelular()%>" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">

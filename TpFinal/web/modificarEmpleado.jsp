@@ -78,7 +78,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">DNI</span>
-										<input class="form-control" type="text" name="txtDni" value="<%=emple.getDni()%>" placeholder="Ingrese un dni" required>
+										<input class="form-control" type="number" name="txtDni" value="<%=emple.getDni()%>" placeholder="Ingrese un dni" required>
 									</div>
 								</div>
 							</div>
@@ -98,8 +98,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Nacionalidad</span>
-                                                                                <select class="form-control" name="cboNac" id="nacionalidad">
-                                                                                    <option value="" selected disabled>Seleccione un pais</option>
+                                                                                <select class="form-control" name="cboNac" id="nacionalidad" required="required">
+                                                                                    <option value="" selected disabled></option>
 											<option value="Argentina">Argentina</option>
 											<option value="Brasil">Brasil</option>
                                                                                         <option value="Bolivia">Bolivia</option>
@@ -124,7 +124,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Celular</span>
-										<input class="form-control" type="text" name="txtCelular" value="<%=emple.getCelular()%>" placeholder="Ingrese un teléfono" required>
+										<input class="form-control" type="number" name="txtCelular" value="<%=emple.getCelular()%>" placeholder="Ingrese un teléfono" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -138,8 +138,8 @@
 								<div class="col-sm-6">
 									<div class="form-group">
                                                                                 <span class="form-label">Cargo</span>
-                                                                                <select class="form-control" name="txtCargo" id="cargo" required>
-                                                                                    <option value="" selected disabled>Seleccione un cargo</option>
+                                                                                <select class="form-control" name="txtCargo" id="cargo" required="required">
+                                                                                    <option selected disabled></option>
 											<option value="empleado">empleado</option>
 											<option value="gerente">gerente</option>
 										</select>
@@ -156,7 +156,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Sueldo</span>
-										<input class="form-control" type="text" name="txtSueldo" value="<%=emple.getSueldo()%>" placeholder="Ingrese un sueldo" required>
+										<input class="form-control" type="number" name="txtSueldo" value="<%=emple.getSueldo()%>" placeholder="Ingrese un sueldo" required>
 									</div>
 								</div>
 							</div>

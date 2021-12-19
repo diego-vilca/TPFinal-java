@@ -113,8 +113,8 @@ si tenemos jsp en la parte de arriba-->
                                            
 
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
     <%}%>
     </body>
 </html>
