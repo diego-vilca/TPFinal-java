@@ -38,7 +38,7 @@
 			<div class="container">
 				<div class="row">
                                         <div class="booking-form">
-                                                <div class="titulo">Modificar empleados</div>
+                                                <div class="titulo">Modificar Empleado</div>
                                                 <form action="SvEmpleadoModificar" method="GET">
                                                     <% HttpSession misession = request.getSession();
                                                         Empleado emple = (Empleado) misession.getAttribute("empleado");%>
@@ -125,8 +125,20 @@
                                                         <div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Cargo</span>
-										<input class="form-control" type="text" name="txtCargo" value="<%=emple.getCargo()%>" placeholder="Ingrese un cargo" required>
+                                                                                <span class="form-label">Cargo</span>
+                                                                                <select class="form-control" name="txtCargo" id="cargo" required>
+                                                                                    <option value="" selected disabled>Seleccione un cargo</option>
+											<option value="empleado">empleado</option>
+											<option value="gerente">gerente</option>
+										</select>
+                                                                                <!-- seteo por defecto el option correspondiente-->
+                                                                                <script>
+                                                                                         document.ready = document.getElementById("cargo").value = "<%=emple.getCargo()%>";
+                                                                                </script>
+                                                                                
+										<span class="select-arrow"></span>
+                                                                                
+										
 									</div>
 								</div>
 								<div class="col-sm-6">

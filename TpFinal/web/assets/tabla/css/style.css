@@ -8223,7 +8223,6 @@ h1, h2, h3, h4, h5,
 
 .btn {
   cursor: pointer;
-  border-width: 2px;
   border-radius: 2px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -8238,12 +8237,16 @@ h1, h2, h3, h4, h5,
     -moz-box-shadow: 0px 12px 20px -6px rgba(0, 0, 0, 0.21);
     box-shadow: 0px 12px 20px -6px rgba(0, 0, 0, 0.21); }
   .btn.btn-primary {
-    background: #6807f9;
-    border-color: #6807f9;
+    background: #1488CC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F74d36, #F78536);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F74d36, #F78536); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+    border-color: #F52b14;
     color: #fff; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
-      border-color: #5305c8 !important;
-      background: #5305c8 !important; }
+      border-color: #F74d36 !important;
+      background: #1488CC;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #F96f58, #F9a758);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #F96f58, #F9a758); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    }
     .btn.btn-primary.btn-link {
       background: transparent;
       color: #fff;

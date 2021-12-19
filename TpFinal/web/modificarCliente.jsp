@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Modificar Clientes</title>
+	<title>Modificar Cliente</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
@@ -37,7 +37,7 @@
 			<div class="container">
 				<div class="row">
                                         <div class="booking-form">
-                                                <div class="titulo">Modificar Clientes</div>
+                                                <div class="titulo">Modificar Cliente</div>
                                                 <form action="SvClienteModificar" method="GET">
                                                     <% HttpSession misession = request.getSession();
                                                         Cliente cliente = (Cliente) misession.getAttribute("cliente");%>
@@ -93,7 +93,7 @@
                                                                                         <option value="Ecuador">Ecuador</option>
 											<option value="Paraguay">Paraguay</option>
 											<option value="Peru">Peru</option>
-                                                                                        <option value="Paraguay">Uruguay</option>
+                                                                                        <option value="Uruguay">Uruguay</option>
 											<option value="Venezuela">Venezuela</option>
 										</select>
                                                                                 <!-- seteo por defecto el option correspondiente-->

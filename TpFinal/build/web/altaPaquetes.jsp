@@ -10,7 +10,7 @@ si tenemos jsp en la parte de arriba-->
 <!doctype html>
 <html lang="es">
   <head>
-  	<title>Ver Servicios</title>
+  	<title>Alta Paquetes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -80,9 +80,12 @@ si tenemos jsp en la parte de arriba-->
 					</div>  
 				</div>
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
-                    </div>  
+                    <div class="d-flex justify-content-between">
+                            <div class="justify-content-center">
+                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                            </div>  
+                            
+                    </div>   
                                             
 		</div>
 	</section>

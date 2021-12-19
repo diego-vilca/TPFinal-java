@@ -131,13 +131,14 @@
 	font-size: 18px;
         margin-bottom: 5px;
 	text-transform: capitalize;
-	border: none;
+        border-width: 2px;
         border-radius: 10px;
 	width: 100%;
         background: #1488CC;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to left, #F74d36, #F78536);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #F74d36, #F78536); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
         color:white;
+        border-color: #f76636;
 }
 
 .submit-btn:hover{
@@ -145,6 +146,7 @@
         background: -webkit-linear-gradient(to left, #F96f58, #F9a758);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #F96f58, #F9a758); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
         color:white;
+        border-color: #f98858;
 }
 
 .booking-form .titulo{

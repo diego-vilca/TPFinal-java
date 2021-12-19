@@ -36,22 +36,22 @@ public class SvVentaModificar extends HttpServlet {
         //busco mi venta
         Venta venta = control.buscarVenta(numVenta);
         
-        //Obtengo la fecha actual
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-        Date date = new Date();  
-        String fechaStr = formatter.format(date);  
-        
-        //Obtengo la fecha actual en tipo Date
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        //Obtengo la fecha actual
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+//        Date date = new Date();  
+//        String fechaStr = formatter.format(date);  
+//        
+//        //Obtengo la fecha actual en tipo Date
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha= new Date();
         
-            try {
-                fecha = formato.parse(fechaStr);
-            } catch (Exception e) {
-                //imprimo la excepción
-                e.printStackTrace();
-            }
-        
+//            try {
+//                fecha = formato.parse(fechaStr);
+//            } catch (Exception e) {
+//                //imprimo la excepción
+//                e.printStackTrace();
+//            }
+//        
         //seteo la fecha de la modificacion
         venta.setFechaVenta(fecha);
         
@@ -92,7 +92,7 @@ public class SvVentaModificar extends HttpServlet {
         Venta venta =  control.buscarVenta(codigo);
         HttpSession misession = request.getSession();
         
-        System.out.println(venta.getMedioPago());
+        //System.out.println(venta.getMedioPago());
         
         //envio el paquete
         misession.setAttribute("venta", venta);

@@ -32,7 +32,7 @@ si tenemos jsp en la parte de arriba-->
                     <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-                            <h4 class="text-center mb-4 titulo">Lista de clientes</h4>
+                            <h4 class="text-center mb-4 titulo">Lista de Clientes</h4>
 			</div>
 			<div class="row">
 				<div class="col-md-12">

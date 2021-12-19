@@ -23,7 +23,7 @@ si tenemos jsp en la parte de arriba-->
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-                            <h4 class="text-center mb-4 titulo">Lista de empleados</h4>
+                            <h4 class="text-center mb-4 titulo">Lista de Empleados</h4>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -81,8 +81,16 @@ si tenemos jsp en la parte de arriba-->
 					</div>  
 				</div>
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
+                    <div class="d-flex justify-content-between">
+                            <div class="justify-content-center">
+                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                            </div>  
+                            <div class="justify-content-center">
+                                    <a href="altaEmpleados.jsp" class="btn btn-primary btn-lg">Agregar Empleado</a>
+                            </div>
+                            <div class="justify-content-center">
+                                    <a href="venta.jsp" class="btn btn-primary btn-lg">Realizar Venta</a>
+                            </div>  
                     </div>  
                                             
 		</div>

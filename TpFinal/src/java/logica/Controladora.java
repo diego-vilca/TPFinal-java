@@ -268,6 +268,13 @@ public class Controladora {
 
     //Borrar paquete
     public void borrarPaquete(int codigo) {
+        
+//        PaqueteTuristico miPaquete = buscarPaquete(codigo);
+//        
+//        for (ServicioTuristico servicio : miPaquete.getListaServicios()) {
+//            borrarServicio(servicio.getCodigo());
+//        }
+        
         controlPersis.borrarPaquete(codigo);
     }
     
@@ -291,21 +298,21 @@ public class Controladora {
         ServicioTuristico auxS = new ServicioTuristico();
         PaqueteTuristico auxP = new PaqueteTuristico();
         
-        //Obtengo la fecha actual
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-        Date date = new Date();  
-        String fechaStr = formatter.format(date);  
-        
-        //Obtengo la fecha actual en tipo Date
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        //Obtengo la fecha actual
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+//        Date date = new Date();  
+//        String fechaStr = formatter.format(date);  
+//        
+//        //Obtengo la fecha actual en tipo Date
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha= new Date();
         
-            try {
-                fecha = formato.parse(fechaStr);
-            } catch (Exception e) {
-                //imprimo la excepción
-                e.printStackTrace();
-            }
+//            try {
+//                fecha = formato.parse(fechaStr);
+//            } catch (Exception e) {
+//                //imprimo la excepción
+//                e.printStackTrace();
+//            }
         
         //Creo la venta
         if (tipoVenta.equals("servicio")) {

@@ -32,16 +32,13 @@ public class SvCliente extends HttpServlet {
         processRequest(request, response);
         
         processRequest(request, response);
-        
+        //obtengo el listado de clientes
         List<Cliente> listaClientes = control.traerClientes();
         
-//        for (Cliente cliente : listaClientes) {
-//            List<Venta> lVentas = cliente.getListaVenta();
-//            System.out.println(lVentas.size());
-//        }
-        
+        //actualizo mi variable de session
         HttpSession misession = request.getSession();
         misession.setAttribute("listaClientes", listaClientes);
+        //redirecciono
         response.sendRedirect("traerClientes.jsp");
     }
 
@@ -50,6 +47,7 @@ public class SvCliente extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        //obtengo los datos del formulario
         String nombre = request.getParameter("txtNombre");
         String apellido = request.getParameter("txtApellido");
         String direccion = request.getParameter("txtDireccion");
@@ -59,8 +57,8 @@ public class SvCliente extends HttpServlet {
         String celular = request.getParameter("txtCelular");
         String email = request.getParameter("txtEmail");
         
+        //envio los datos a mi lógica para crear a mi cliente
         control.crearCliente(nombre, apellido, direccion, dni, fecha, nacionalidad, celular, email);
-                    
         
 
         //redirijo al listado de clientes

@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Alta Servicios</title>
+	<title>Modificar Servicio</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
@@ -110,11 +110,13 @@
                                                                     <input class="form-control" type="text" name="txtCosto" value="<%=servicio.getCosto()%>" placeholder="Ingrese un costo">
                                                                 </div>
                                                         </div>
+                                                                
                                                         <input type="hidden" name="codigo" value="<%=servicio.getCodigo()%>">  
 							<div class="form-btn">
 								<button type="submit" class="submit-btn">Enviar</button>
 							</div>
 						</form>
+                                                        
                                                 <div class="form-btn">
                                                             <a href="index.jsp"><button class="submit-btn">Volver</button></a>
 						</div>

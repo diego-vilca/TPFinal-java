@@ -53,7 +53,7 @@
 							</div>
 						</form>
                                                 <div class="form-btn">
-                                                            <a href="index.jsp"><button class="submit-btn">Volver</button></a>
+                                                            <a href="index.jsp"><button class="submit-btn">Principal</button></a>
 						</div>
 					</div>
 				</div>

@@ -73,8 +73,9 @@ public class SvEmpleado extends HttpServlet {
         //llamo a mi controladora de la logica
         control.crearEmpleado(nombre, apellido, direccion, dni, fecha, nacionalidad, celular, email, cargo, sueldo, usuario, contrasenia);
                     
-        //Redirecciono al index
-        response.sendRedirect("index.jsp");
+        
+        //redirijo al listado de empleados
+        doGet(request, response);
         
         
     }

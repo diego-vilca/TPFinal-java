@@ -353,7 +353,9 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2 style="font-weight:bold;">Clientes Satisfechos</h2>
 				</div>
+                            
 			</div>
+                    <br><br>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-testimony animate-box">

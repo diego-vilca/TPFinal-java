@@ -256,8 +256,11 @@ si tenemos jsp en la parte de arriba-->
                                             
                                             
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
+                    <div class="d-flex justify-content-between">
+                            <div class="justify-content-center">
+                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                            </div>  
+                            
                     </div>  
                                             
 		</div>

@@ -11,7 +11,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-  	<title>Ventas</title>
+  	<title>Modificar Venta</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -329,12 +329,18 @@
 					</div> 
 
                                        
-                                            
+                                <div class="d-flex justify-content-between">
+                                        <div class="justify-content-center">
+                                                <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                                        </div>  
+
+                                        <div class="justify-content-center">
+                                                <a href="venta.jsp" class="btn btn-primary btn-lg">Realizar Venta</a>
+                                        </div>  
+                                </div>   
                                             
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
-                    </div>  
+                   
                                             
 		</div>
 	</section>

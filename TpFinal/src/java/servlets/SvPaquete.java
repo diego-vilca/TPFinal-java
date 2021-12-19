@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logica.Controladora;
+import logica.PaqueteTuristico;
 import logica.ServicioTuristico;
 
 
@@ -29,6 +30,7 @@ public class SvPaquete extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
         
         //Envio la lista de servicios a que se visualice en alta paquete
         List<ServicioTuristico> listaServicios = control.traerServicios();
@@ -51,9 +53,12 @@ public class SvPaquete extends HttpServlet {
         
         control.crearPaquete(listaIds);
         
-        //Redirecciono al index
-        response.sendRedirect("index.jsp");
+        //Redirecciono a mostrar paquetes
+        List<PaqueteTuristico> listaPaquete = control.traerPaquetes();
         
+        HttpSession misession = request.getSession();
+        misession.setAttribute("listaPaquetes", listaPaquete);
+        response.sendRedirect("traerPaquetes.jsp");
     }
 
     @Override

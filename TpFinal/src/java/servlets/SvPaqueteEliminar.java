@@ -46,7 +46,7 @@ public class SvPaqueteEliminar extends HttpServlet {
         //actualizo la variable de sesión con los paquetes actualizados
         request.getSession().setAttribute("listaPaquetes", control.traerPaquetes());
         
-        response.sendRedirect("eliminarPaquetes.jsp");
+        doGet(request, response);
     }
 
     

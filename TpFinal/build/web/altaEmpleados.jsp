@@ -109,8 +109,14 @@
                                                         <div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Cargo</span>
-										<input class="form-control" type="text" name="txtCargo" placeholder="Ingrese un cargo" required>
+										<span class="form-label">cargo</span>
+                                                                                <select class="form-control" name="txtCargo" required>
+                                                                                    <option selected disabled>Seleccione un cargo</option>
+											<option>empleado</option>
+											<option>gerente</option>
+                                                                                        
+										</select>
+										<span class="select-arrow"></span>
 									</div>
 								</div>
 								<div class="col-sm-6">

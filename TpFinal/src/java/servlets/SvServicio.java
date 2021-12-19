@@ -43,16 +43,18 @@ public class SvServicio extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
+         //recibo los datos
         String nombre = request.getParameter("cboNombre");
         String descripcion = request.getParameter("txtDescripcion");
         String destino = request.getParameter("cboDestino");
         double costo = Double.parseDouble(request.getParameter("txtCosto"));
         String fecha = request.getParameter("txtFecha");
         
+        //paso los datos a mi lógica
         control.crearServicio(nombre, descripcion, destino, costo, fecha);
         
-        //Redirecciono al index
-        response.sendRedirect("index.jsp");
+        //Redirecciono a mostrar servicios
+        doGet(request, response);
     }
 
     
