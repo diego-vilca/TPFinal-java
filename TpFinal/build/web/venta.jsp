@@ -30,6 +30,18 @@
 </head>
 
 <body>
+    <%
+            
+            
+                HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+            
+                
+            %>
     	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
@@ -60,6 +72,7 @@
 			</div>
 		</div>
 	</div>
+        <%}%>
 </body>
 
 </html>

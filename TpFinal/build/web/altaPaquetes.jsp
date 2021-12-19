@@ -22,6 +22,14 @@ si tenemos jsp en la parte de arriba-->
 
 	</head>
 	<body>
+            <%
+                HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+                    %>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -31,7 +39,7 @@ si tenemos jsp en la parte de arriba-->
 				<div class="col-md-12">
 					
 					<div class="table-wrap">
-                                            <form action="SvPaquete" method="POST">
+                                            <form action="SvPaquete" method="POST" id="idform">
                                         <table class="table">
 					    <thead class="thead-primary">
 					      <tr>
@@ -71,12 +79,16 @@ si tenemos jsp en la parte de arriba-->
                                               <% } %>
 					    </tbody>
 					  </table>
+                                            
+                                          </form>  
+                                            
                                             <div class="row justify-content-center">
                                                 <div class="form-btn">
-                                                    <button type="submit" class="btn btn-primary btn-lg">Seleccionar Paquete</button>
+                                                    <button type="submit" class="btn btn-primary btn-lg" onclick="validarChkBox();">Seleccionar Paquete</button>
                                                 </div>
+                                                
                                             </div>
-                                          </form>  
+                                                
 					</div>  
 				</div>
 			</div>
@@ -90,10 +102,19 @@ si tenemos jsp en la parte de arriba-->
 		</div>
 	</section>
                                            
-
+        <script>
+                function validarChkBox(){
+                    if(document.querySelectorAll('input[type="checkbox"]:checked').length < 2) {
+                        alert("Por favor, seleccione 2 o más servicios.");
+                    }else{
+                        document.getElementById("idform").submit();
+                    }
+                }
+        </script>
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
 
+  <%}%>
 	</body>
 </html>

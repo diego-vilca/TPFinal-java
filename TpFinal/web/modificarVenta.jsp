@@ -37,13 +37,24 @@
         </script>
 	</head>
 	<body>
-            <% 
+            <%
+            
+            
                 HttpSession misession = request.getSession();
+                String usu = (String) misession.getAttribute("usuario");
+                //Datos para la venta
                 Venta venta = (Venta) misession.getAttribute("venta");
-                
                 Cliente cliente = venta.getCliente();
                 
+                
+                //validacion login
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+            
+                
             %>
+            
             
 	<section class="ftco-section">
 		<div class="container">
@@ -362,6 +373,6 @@
 <script src="assets/tabla/js/jquery.min.js"></script>
 <script src="assets/tabla/js/bootstrap.min.js"></script>
 <script src="assets/tabla/js/main.js"></script>
-
-	</body>
+<%}%>
+</body>
 </html>

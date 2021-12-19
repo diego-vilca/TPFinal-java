@@ -21,6 +21,7 @@ si tenemos jsp en la parte de arriba-->
 
 	</head>
 	<body>
+            
             <%
                 HttpSession sesion = request.getSession();
                 String usu = (String) sesion.getAttribute("usuario");
@@ -101,11 +102,11 @@ si tenemos jsp en la parte de arriba-->
                                            
 
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
 
                     
-                    <%}%>
+            <%}%>
 	
 	</body>
 </html>

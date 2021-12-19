@@ -19,6 +19,18 @@
 
 	</head>
 	<body>
+            <%
+            
+            
+                HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+            
+                
+            %>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -116,10 +128,11 @@
                                            
 
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
 
-	</body>
+    <%}%>
+    </body>
 </html>
 
 

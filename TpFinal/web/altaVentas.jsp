@@ -37,9 +37,19 @@ si tenemos jsp en la parte de arriba-->
         </script>
 	</head>
 	<body>
-            <% 
+        <%
+            
+            
                 HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                //Obtengo el cliente para la venta
                 Cliente cliente = (Cliente) sesion.getAttribute("cliente");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+            
+                
             %>
             
 	<section class="ftco-section">
@@ -271,5 +281,6 @@ si tenemos jsp en la parte de arriba-->
   <script src="assets/tabla/js/bootstrap.min.js"></script>
   <script src="assets/tabla/js/main.js"></script>
 
-	</body>
+    <%}%>
+        </body>
 </html>

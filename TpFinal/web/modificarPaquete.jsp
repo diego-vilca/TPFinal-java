@@ -20,6 +20,18 @@
 
 	</head>
 	<body>
+            <%
+            
+            
+                HttpSession sesion = request.getSession();
+                String usu = (String) sesion.getAttribute("usuario");
+                
+                    if(usu == null ){
+                        response.sendRedirect("login.jsp");
+                    }else{
+            
+                
+            %>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -29,7 +41,7 @@
 				<div class="col-md-12">
 					
 					<div class="table-wrap">
-                                            <form action="SvPaqueteModificar" method="get">
+                                            <form action="SvPaqueteModificar" method="get" id="idform">
                                                 <% HttpSession misession = request.getSession();
                                                         PaqueteTuristico paquete = (PaqueteTuristico) misession.getAttribute("paquete");%>
                                         <table class="table">
@@ -94,27 +106,42 @@
                                               <% } %>
 					    </tbody>
 					  </table>
-                                            <div class="row justify-content-center">
-                                                <input type="hidden" name="codigo" value="<%=paquete.getCodigoPaquete()%>"> 
-                                                <div class="form-btn">
-                                                    <button type="submit" class="btn btn-primary btn-lg">Modificar Paquete</button>
-                                                </div>
-                                            </div>
+                                                <input type="hidden" name="codigo" value="<%=paquete.getCodigoPaquete()%>">
                                           </form>  
+                                            <div class="row justify-content-center">
+                                                     
+                                                    <div class="form-btn">
+                                                        <button type="submit" class="btn btn-primary btn-lg" onclick="validarChkBox();">Modificar Paquete</button>
+                                                    </div>
+                                            </div>
 					</div>  
 				</div>
 			</div>
-                    <div class="justify-content-center">
-			<a href="index.jsp" class="btn-volver">Ir a la Página Principal</a>
-                    </div>  
+                    <div class="d-flex justify-content-between">
+                            <div class="justify-content-center">
+                                    <a href="index.jsp" class="btn btn-primary btn-lg">Ir a la Página Principal</a>
+                            </div>  
+                            
+                            <div class="justify-content-center">
+                                    <a href="venta.jsp" class="btn btn-primary btn-lg">Realizar Venta</a>
+                            </div>  
+                    </div>        
                                             
 		</div>
 	</section>
                                            
-
+        <script>
+                function validarChkBox(){
+                    if(document.querySelectorAll('input[type="checkbox"]:checked').length < 2) {
+                        alert("Por favor, seleccione 2 o más servicios.");
+                    }else{
+                        document.getElementById("idform").submit();
+                    }
+                }
+        </script>                                 
 	<script src="assets/tabla/js/jquery.min.js"></script>
-  <script src="assets/tabla/js/bootstrap.min.js"></script>
-  <script src="assets/tabla/js/main.js"></script>
-
-	</body>
+        <script src="assets/tabla/js/bootstrap.min.js"></script>
+        <script src="assets/tabla/js/main.js"></script>
+    <%}%>
+    </body>
 </html>>
